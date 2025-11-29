@@ -1,54 +1,79 @@
-export default function About() {
+import { useEffect, useState } from "react";
+import useActiveSection from "../../hooks/useActiveSection";
+
+const navLinks = [
+    { label: "Home", href: "home" },
+    { label: "About", href: "about" },
+    { label: "Portfolio", href: "portfolio" },
+    { label: "News", href: "news" },
+    { label: "Contact", href: "contact" },
+];
+
+export default function Topbar() {
+    const [scrolled, setScrolled] = useState(false);
+
+    const activeSection = useActiveSection(navLinks.map((link) => link.href));
+
+    useEffect(() => {
+        const onScroll = () => {
+            setScrolled(window.scrollY > 80);
+        };
+
+        onScroll(); // proveri odmah pri mount-u
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
     return (
-        <section id="about" className="py-20 bg-background-soft">
-            <div className="max-w-6xl mx-auto px-4 grid gap-10 md:grid-cols-2 items-center">
-                {/* Slika */}
-                <div className="relative">
-                    <div className="aspect-[3/4] overflow-hidden rounded-2xl border border-border-subtle shadow-lg shadow-primary/10">
-                        <img
-                            src="/img/about/1.jpg"
-                            alt="About"
-                            className="h-full w-full object-cover"
-                        />
-                    </div>
-                </div>
+        <header
+            className={`
+        fixed top-0 left-0 right-0 z-40 hidden md:block
+        transition-all duration-300
+        ${scrolled ? "bg-white shadow-md py-4" : "bg-transparent py-7"}
+      `}
+        >
+            <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
+                {/* Logo */}
+                <a href="#home">
+                    {!scrolled ? (
+                        <img src="/img/logo/logo.png" className="h-8" alt="Logo light" />
+                    ) : (
+                        <img src="/img/logo/dark.png" className="h-8" alt="Logo dark" />
+                    )}
+                </a>
 
-                {/* Tekst */}
-                <div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        About <span className="text-primary">Me</span>
-                    </h2>
-                    <p className="text-text-muted mb-6 text-sm leading-relaxed">
-                        Hello! I'm Alan Walker. I'm a web developer, and I'm very passionate
-                        and dedicated to my work. With 20 years experience as a professional
-                        web developer, I have acquired the skills and knowledge necessary to
-                        make your project a success. I enjoy every step of the design
-                        process, from discussion and collaboration.
-                    </p>
+                {/* Navigation */}
+                <nav>
+                    <ul className="flex items-center gap-8 text-sm font-medium">
+                        {navLinks.map((link) => {
+                            const isActive = activeSection === link.href;
 
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 text-sm">
-                        {[
-                            "Web Development",
-                            "Search Engine Optimization",
-                            "Social Media Marketing",
-                            "Content Generation",
-                        ].map((item) => (
-                            <li key={item} className="flex items-center gap-2">
-                                <span className="h-2 w-2 rounded-full bg-primary" />
-                                <span className="text-text-base">{item}</span>
-                            </li>
-                        ))}
+                            return (
+                                <li key={link.href} className="relative">
+                                    <a
+                                        href={`#${link.href}`}
+                                        className={`
+                      transition-colors pb-1
+                      ${scrolled ? "text-black" : "text-white"}
+                      ${isActive ? "text-primary" : "hover:text-primary"}
+                    `}
+                                    >
+                                        {link.label}
+                                    </a>
+
+                                    {/* ACTIVE UNDERLINE */}
+                                    <span
+                                        className={`
+                      absolute left-0 right-0 -bottom-1 h-[2px] bg-primary transition-all
+                      ${isActive ? "opacity-100 w-full" : "opacity-0 w-0"}
+                    `}
+                                    />
+                                </li>
+                            );
+                        })}
                     </ul>
-
-                    <a
-                        href="/img/resume/resume.jpg"
-                        download
-                        className="inline-flex items-center rounded-full border border-primary px-6 py-2 text-sm font-medium text-primary hover:bg-primary hover:text-background transition-colors"
-                    >
-                        Download CV
-                    </a>
-                </div>
+                </nav>
             </div>
-        </section>
+        </header>
     );
 }

@@ -19,7 +19,7 @@ export default function App() {
       <MobileMenu />
 
       {/* Sekcije */}
-      <main className="pt-20">
+      <main>
         <Hero />
         <About />
         {/* <Portfolio /> */}
