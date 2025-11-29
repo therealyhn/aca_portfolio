@@ -19,7 +19,7 @@ export default function Topbar() {
             setScrolled(window.scrollY > 80);
         };
 
-        onScroll(); // proveri odmah pri mount-u
+        onScroll();
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
@@ -28,7 +28,7 @@ export default function Topbar() {
         <header
             className={`
         fixed top-0 left-0 right-0 z-40 hidden md:block
-        transition-all duration-300
+        transition-all duration-500
         ${scrolled ? "bg-white shadow-md py-4" : "bg-transparent py-7"}
       `}
         >

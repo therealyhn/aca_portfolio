@@ -12,11 +12,11 @@ export default function Hero() {
 
             {/* Content */}
             <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
-                    Alan <span className="text-primary">Walker</span>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-extrabold tracking-tight mb-4">
+                    Aleksandar <span className="text-white">Jovanovic</span>
                 </h1>
                 <p className="text-lg md:text-xl text-text-muted">
-                    Web &amp; Mobile App Developer
+                    Photographer <span className="text-primary">&amp;</span> Graphic Designer
                 </p>
 
                 {/* Scroll down indicator */}
