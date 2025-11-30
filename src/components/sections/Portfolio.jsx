@@ -2,13 +2,52 @@ import { useEffect, useState } from "react";
 import { portfolioCategories, portfolioItems, } from "../../data/portfolioData";
 import CategoryCard from "../portfolio/CategoryCard";
 import CategoryModal from "../portfolio/CategoryModal";
+import ImageGalleryModal from "../portfolio/ImageGalleryModal";
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState(null);
+  const [activeImageIndex, setActiveImageIndex] = useState(null);
 
-  const closeModal = () => setActiveCategory(null);
+  // Radovi koji pripadaju aktivnoj kategoriji
+  const itemsForActiveCategory = activeCategory
+    ? portfolioItems.filter(
+      (item) => item.categoryId === activeCategory.id
+    )
+    : [];
 
-  // Zaključavanje scroll-a kad je modal otvoren
+  const openCategory = (category) => {
+    setActiveCategory(category);
+    setActiveImageIndex(null); // reset slike
+  };
+
+  const closeCategory = () => {
+    setActiveCategory(null);
+    setActiveImageIndex(null);
+  };
+
+  // const openImage = (index) => {
+  //   setActiveImageIndex(index);
+  // };
+
+  const closeImage = () => {
+    setActiveImageIndex(null);
+  };
+
+  const handlePrevImage = () => {
+    setActiveImageIndex((prev) => {
+      if (prev === null || itemsForActiveCategory.length === 0) return prev;
+      return (prev - 1 + itemsForActiveCategory.length) % itemsForActiveCategory.length;
+    });
+  };
+
+  const handleNextImage = () => {
+    setActiveImageIndex((prev) => {
+      if (prev === null || itemsForActiveCategory.length === 0) return prev;
+      return (prev + 1) % itemsForActiveCategory.length;
+    });
+  };
+
+  // Lock scroll 
   useEffect(() => {
     if (activeCategory) {
       const prev = document.body.style.overflow;
@@ -18,11 +57,6 @@ export default function Portfolio() {
       };
     }
   }, [activeCategory]);
-
-  // Radovi samo za aktivnu kategoriju
-  const itemsForActiveCategory = activeCategory
-    ? portfolioItems.filter((item) => item.categoryId === activeCategory.id)
-    : [];
 
   return (
     <section id="portfolio" className="bg-background-soft py-20 md:py-24">
@@ -41,7 +75,7 @@ export default function Portfolio() {
               <CategoryCard
                 key={category.id}
                 category={category}
-                onClick={() => setActiveCategory(category)}
+                onClick={() => openCategory(category)}
               />
             ))}
           </ul>
@@ -49,11 +83,25 @@ export default function Portfolio() {
       </div>
 
       {/* Modal sa radovima iz kategorije */}
-      <CategoryModal
-        category={activeCategory}
-        items={itemsForActiveCategory}
-        onClose={closeModal}
-      />
+      {activeCategory && activeImageIndex == null && (
+        <CategoryModal
+          category={activeCategory}
+          items={itemsForActiveCategory}
+          onClose={closeCategory}
+          onItemClick={(index) => setActiveImageIndex(index)}
+        />
+      )}
+
+      {/* Gallery modal za pojedinačnu sliku (swiper-like) */}
+      {activeCategory && activeImageIndex != null && (
+        <ImageGalleryModal
+          items={itemsForActiveCategory}
+          activeIndex={activeImageIndex}
+          onClose={closeImage}
+          onPrev={handlePrevImage}
+          onNext={handleNextImage}
+        />
+      )}
     </section>
   );
 }

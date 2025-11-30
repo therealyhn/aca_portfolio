@@ -1,4 +1,4 @@
-export default function CategoryModal({ category, items, onClose }) {
+export default function CategoryModal({ category, items, onClose, onItemClick }) {
     if (!category) return null;
 
     const hasItems = items && items.length > 0;
@@ -16,7 +16,7 @@ export default function CategoryModal({ category, items, onClose }) {
                 <button
                     type="button"
                     onClick={onClose}
-                    className="absolute right-3 top-3 text-text-muted hover:text-primary transition-colors text-3xl leading-none"
+                    className="absolute right-3 top-3 text-text-muted hover:text-primary transition-colors text-4xl leading-none"
                     aria-label="Close"
                 >
                     ×
@@ -24,7 +24,7 @@ export default function CategoryModal({ category, items, onClose }) {
 
                 {/* Header */}
                 <div className="mb-4 pr-8">
-                    <span className="block text-xs font-medium text-primary uppercase tracking-[0.3em] mb-1">
+                    <span className="block text-xs font-medium text-text-muted uppercase tracking-[0.3em] mb-1">
                         Portfolio kategorija
                     </span>
                     <h3 className="text-xl md:text-2xl font-semibold text-text-base">
@@ -41,20 +41,22 @@ export default function CategoryModal({ category, items, onClose }) {
                 <div className="mt-2 overflow-y-auto pr-1">
                     {hasItems ? (
                         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-                            {items.map((item) => (
-                                <figure
+                            {items.map((item, index) => (
+                                <button
                                     key={item.id}
-                                    className="overflow-hidden rounded-md bg-background-soft"
+                                    type="button"
+                                    onClick={() => onItemClick?.(index)}
+                                    className="group overflow-hidden rounded-md bg-background-soft text-left"
                                 >
                                     <img
                                         src={item.image}
                                         alt={item.title}
-                                        className="h-40 w-full object-cover transition-transform duration-300 hover:scale-105"
+                                        className="h-40 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                                     />
-                                    <figcaption className="px-3 py-2 text-xs text-primary">
-                                        {item.title}
-                                    </figcaption>
-                                </figure>
+                                    <div className="px-3 py-2">
+                                        <p className="text-xs text-text-base">{item.title}</p>
+                                    </div>
+                                </button>
                             ))}
                         </div>
                     ) : (
