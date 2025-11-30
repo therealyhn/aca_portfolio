@@ -1,23 +1,28 @@
-import { useState, useEffect } from "react";
-import portfolioItems from "../../data/portfolioItems";
-import PortfolioCard from "../portfolio/PortfolioCard";
-import PortfolioModal from "../portfolio/PortfolioModal";
+import { useEffect, useState } from "react";
+import { portfolioCategories, portfolioItems, } from "../../data/portfolioData";
+import CategoryCard from "../portfolio/CategoryCard";
+import CategoryModal from "../portfolio/CategoryModal";
 
 export default function Portfolio() {
-  const [activeItem, setActiveItem] = useState(null);
+  const [activeCategory, setActiveCategory] = useState(null);
 
-  const closeModal = () => setActiveItem(null);
+  const closeModal = () => setActiveCategory(null);
 
-  // (bonus) lock scroll kad je modal otvoren
+  // Zaključavanje scroll-a kad je modal otvoren
   useEffect(() => {
-    if (activeItem) {
+    if (activeCategory) {
       const prev = document.body.style.overflow;
       document.body.style.overflow = "hidden";
       return () => {
         document.body.style.overflow = prev;
       };
     }
-  }, [activeItem]);
+  }, [activeCategory]);
+
+  // Radovi samo za aktivnu kategoriju
+  const itemsForActiveCategory = activeCategory
+    ? portfolioItems.filter((item) => item.categoryId === activeCategory.id)
+    : [];
 
   return (
     <section id="portfolio" className="bg-background-soft py-20 md:py-24">
@@ -29,22 +34,26 @@ export default function Portfolio() {
           </h2>
         </div>
 
-        {/* Grid */}
+        {/* Grid kategorija */}
         <div className="pt-6">
           <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {portfolioItems.map((item) => (
-              <PortfolioCard
-                key={item.id}
-                item={item}
-                onClick={() => setActiveItem(item)}
+            {portfolioCategories.map((category) => (
+              <CategoryCard
+                key={category.id}
+                category={category}
+                onClick={() => setActiveCategory(category)}
               />
             ))}
           </ul>
         </div>
       </div>
 
-      {/* Modal kao posebna komponenta */}
-      <PortfolioModal item={activeItem} onClose={closeModal} />
+      {/* Modal sa radovima iz kategorije */}
+      <CategoryModal
+        category={activeCategory}
+        items={itemsForActiveCategory}
+        onClose={closeModal}
+      />
     </section>
   );
 }

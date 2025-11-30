@@ -1,36 +1,40 @@
 import { useEffect, useState } from "react";
 
-export default function useActiveSection(sectionIds) {
-    const [active, setActive] = useState(sectionIds[0]);
+export default function useActiveSection(sectionIds, offset = 120) {
+    const [activeId, setActiveId] = useState(sectionIds[0] ?? null);
 
     useEffect(() => {
-        const observers = [];
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY + offset;
 
-        sectionIds.forEach((id) => {
-            const element = document.getElementById(id);
-            if (!element) return;
+            let currentId = sectionIds[0];
 
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            setActive(id);
-                        }
-                    });
-                },
-                {
-                    threshold: 0.2, // section visible 50%
+            for (const id of sectionIds) {
+                const el = document.getElementById(id);
+                if (!el) continue;
+
+                const top = el.offsetTop;
+
+                if (top <= scrollPosition) {
+                    currentId = id;
+                } else {
+                    break;
                 }
-            );
+            }
 
-            observer.observe(element);
-            observers.push(observer);
-        });
+            setActiveId(currentId);
+        };
+
+        handleScroll(); // inicijalno kad se učita stranica
+
+        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("resize", handleScroll);
 
         return () => {
-            observers.forEach((observer) => observer.disconnect());
+            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", handleScroll);
         };
-    }, [sectionIds]);
+    }, [sectionIds, offset]);
 
-    return active;
+    return activeId;
 }
