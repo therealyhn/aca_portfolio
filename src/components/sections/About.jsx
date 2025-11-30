@@ -1,6 +1,6 @@
 export default function About() {
     return (
-        <section id="about" className="py-20 bg-background-soft">
+        <section id="about" className="py-20">
             <div className="max-w-6xl mx-auto px-4 grid gap-10 md:grid-cols-2 items-center">
                 {/* Slika */}
                 <div className="relative">

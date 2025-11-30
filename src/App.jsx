@@ -2,7 +2,7 @@ import Topbar from "./components/layout/Topbar";
 import MobileMenu from "./components/layout/Mobile";
 import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
-// import Portfolio from "./components/sections/Portfolio";
+import Portfolio from "./components/sections/Portfolio";
 // import Skills from "./components/sections/Skills";
 // import Talk from "./components/sections/Talk";
 // import News from "./components/sections/News";
@@ -22,7 +22,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        {/* <Portfolio /> */}
+        <Portfolio />
         {/* <Skills /> */}
         {/* <Talk /> */}
         {/* <News /> */}

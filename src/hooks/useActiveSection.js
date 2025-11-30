@@ -19,7 +19,7 @@ export default function useActiveSection(sectionIds) {
                     });
                 },
                 {
-                    threshold: 0.5, // section visible 50%
+                    threshold: 0.2, // section visible 50%
                 }
             );
 
