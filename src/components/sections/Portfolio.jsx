@@ -63,7 +63,7 @@ export default function Portfolio() {
       <div className="max-w-6xl mx-auto px-4">
         {/* Title */}
         <div className="mb-12">
-          <h2 className="text-sm md:text-base tracking-[0.6em] uppercase font-semibold text-text-base mb-2">
+          <h2 className="text-sm md:text-base tracking-[0.6em] uppercase font-semibold text-text-heading mb-2">
             Selected <span className="text-primary">Works</span>
           </h2>
         </div>
