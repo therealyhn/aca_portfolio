@@ -18,7 +18,7 @@ export default function About() {
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-heading">
                         About <span className="text-primary">Me</span>
                     </h2>
-                    <p className="text-text-muted mb-6 text-lg leading-relaxed">
+                    <p className="text-theme-black mb-6 text-lg leading-relaxed">
                         Hello! I'm Alan Walker. I'm a web developer, and I'm very passionate
                         and dedicated to my work. With 20 years experience as a professional
                         web developer, I have acquired the skills and knowledge necessary to

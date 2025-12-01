@@ -7,7 +7,7 @@ export default {
         // Osnovne boje
         background: {
           DEFAULT: "#ffffff",  // body bg
-          soft: "#f9f9f9",     // sekcije kao portfolio/news
+          soft: "#777777",     // sekcije kao portfolio/news
           dark: "#000000",     // crne sekcije (talk, footer)
         },
 

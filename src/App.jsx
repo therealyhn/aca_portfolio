@@ -3,8 +3,8 @@ import MobileMenu from "./components/layout/Mobile";
 import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
 import Portfolio from "./components/sections/Portfolio";
-// import Skills from "./components/sections/Skills";
-// import Talk from "./components/sections/Talk";
+import Progress from "./components/sections/Progress";
+import Talk from "./components/sections/Talk";
 // import News from "./components/sections/News";
 // import Contact from "./components/sections/Contact";
 // import Footer from "./components/layout/Footer";
@@ -23,8 +23,8 @@ export default function App() {
         <Hero />
         <About />
         <Portfolio />
-        {/* <Skills /> */}
-        {/* <Talk /> */}
+        <Progress />
+        <Talk />
         {/* <News /> */}
         {/* <Contact /> */}
       </main>
