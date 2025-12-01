@@ -1,5 +1,5 @@
+import { useState, useEffect } from "react";
 import useActiveSection from "../../hooks/useActiveSection";
-import { useState } from "react";
 
 const navLinks = [
     { label: "Home", href: "home" },
@@ -11,29 +11,51 @@ const navLinks = [
 
 export default function Mobile() {
     const [open, setOpen] = useState(false);
-    const activeSection = useActiveSection(navLinks.map(l => l.href));
+    const [scrolled, setScrolled] = useState(false);
+
+    const activeSection = useActiveSection(navLinks.map(link => link.href));
+
+    // Scroll detection (za transparent → white bg)
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 10);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <div className="md:hidden">
-            {/* Header */}
-            <div className="fixed top-0 inset-x-0 z-40 bg-white py-3 border-b">
-                <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
-                    <img src="/img/logo/dark.png" className="h-7" />
+            {/* HEADER */}
+            <div
+                className={`
+                    fixed top-0 inset-x-0 z-40
+                    flex justify-between items-center
+                    px-4 py-3 
+                    transition-all duration-300
+                    ${scrolled ? "bg-white shadow-sm border-b" : "bg-transparent"}
+                `}
+            >
+                {/* LOGO */}
+                <img
+                    src={scrolled ? "/img/logo/dark.png" : "/img/logo/logo.png"}
+                    className="h-7 transition-all"
+                />
 
-                    <button onClick={() => setOpen(!open)}>
-                        <div className="space-y-1">
-                            <span className="block h-0.5 w-5 bg-black" />
-                            <span className="block h-0.5 w-5 bg-black" />
-                            <span className="block h-0.5 w-5 bg-black" />
-                        </div>
-                    </button>
-                </div>
+                {/* BURGER */}
+                <button onClick={() => setOpen(!open)}>
+                    <div className="space-y-1">
+                        <span className="block h-0.5 w-6 bg-primary" />
+                        <span className="block h-0.5 w-6 bg-primary" />
+                        <span className="block h-0.5 w-6 bg-primary" />
+                    </div>
+                </button>
             </div>
 
-            {/* Menu list */}
+            {/* MENU LIST – overlay */}
             {open && (
-                <nav className="fixed top-[56px] inset-x-0 bg-white border-b z-30">
-                    <ul className="px-4 py-3 space-y-3">
+                <nav className="fixed top-[56px] inset-x-0 bg-white z-30 border-b shadow-md">
+                    <ul className="px-4 py-4 space-y-3">
                         {navLinks.map((link) => {
                             const isActive = activeSection === link.href;
 
@@ -41,11 +63,23 @@ export default function Mobile() {
                                 <li key={link.href}>
                                     <a
                                         href={`#${link.href}`}
-                                        onClick={() => setOpen(false)}
-                                        className={`
-                      block py-1
-                      ${isActive ? "text-primary font-semibold" : "text-black"}
-                    `}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            setOpen(false);
+
+                                            // SAČEKAJ zatvaranje → onda skroluj
+                                            setTimeout(() => {
+                                                document
+                                                    .querySelector(`#${link.href}`)
+                                                    ?.scrollIntoView({
+                                                        behavior: "smooth",
+                                                    });
+                                            }, 30);
+                                        }}
+                                        className={`block py-1 text-base ${isActive
+                                                ? "text-primary font-semibold"
+                                                : "text-black"
+                                            }`}
                                     >
                                         {link.label}
                                     </a>
