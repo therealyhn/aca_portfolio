@@ -1,12 +1,18 @@
 export default function Talk() {
     return (
         <section className="relative py-16 md:py-20">
-            {/* Pattern pozadina kao u originalu */}
-            <div className="absolute inset-0 opacity-20 bg-[url('/img/patterns/inspiration-geometry.png')] bg-repeat" />
+            {/* Pattern pozadina */}
+            <div
+                className="pointer-events-none absolute inset-0 bg-repeat z-20"
+                style={{
+                    backgroundImage: "url('/img/patterns/gplay.png')",
+                }}
+            />
             {/* Crni overlay */}
-            <div className="absolute inset-0 bg-black/90" />
+            <div className="pointer-events-none absolute inset-0 bg-black/90 z-10" />
 
-            <div className="relative max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+            {/* CONTENT IZABD SVEGA */}
+            <div className="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
                 {/* Tekst */}
                 <div className="md:max-w-xl">
                     <h3 className="text-2xl md:text-3xl font-semibold text-white">
@@ -21,15 +27,15 @@ export default function Talk() {
                 <div>
                     <a
                         href="#contact"
-                        className="
-              inline-flex items-center text-sm md:text-base font-semibold
-              text-white tracking-[0.15em] uppercase
-              relative pb-1
-            "
+                        className="group inline-flex items-center text-sm md:text-base font-semibold text-white tracking-[0.15em] uppercase relative pb-1"
                     >
                         Contact Me
-                        <span className="absolute bottom-0 left-0 h-[2px] w-full bg-white/30" />
-                        <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-white transition-all duration-500 group-hover:w-full" />
+
+                        {/* tanka statična linija */}
+                        <span className="absolute bottom-0 left-0 w-full h-[2px] bg-white/30" />
+
+                        {/* animirana linija */}
+                        <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-white transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:w-full" />
                     </a>
                 </div>
             </div>
