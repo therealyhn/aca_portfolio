@@ -3,7 +3,7 @@ export default function Talk() {
         <section className="relative py-16 md:py-20">
             {/* Pattern pozadina */}
             <div
-                className="pointer-events-none absolute inset-0 bg-repeat z-20"
+                className="pointer-events-none absolute inset-0 bg-repeat opacity-50 z-20"
                 style={{
                     backgroundImage: "url('/img/patterns/gplay.png')",
                 }}

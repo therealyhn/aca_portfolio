@@ -18,7 +18,7 @@ export default function CategoryCard({ category, onClick }) {
 
                 {/* Tekst preko slike (naslov + kratak opis) */}
                 <div className="absolute inset-x-0 bottom-0 p-5">
-                    <span className="block text-xs font-semibold uppercase tracking-[0.3em] text-primary mb-1">
+                    <span className="block text-md font-bold uppercase tracking-[0.3em] text-primary mb-1">
                         Kategorija
                     </span>
                     <h3 className="text-lg font-semibold text-white">

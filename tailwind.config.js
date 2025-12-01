@@ -1,31 +1,24 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        // Osnovne boje
         background: {
-          DEFAULT: "#ffffff",  // body bg
-          soft: "#777777",     // sekcije kao portfolio/news
-          dark: "#000000",     // crne sekcije (talk, footer)
+          DEFAULT: "#ffffff",
+          soft: "#f2f2f2",
+          dark: "#000000",
         },
-
         text: {
-          base: "#767676",     // body tekst
-          heading: "#000000",  // h1–h6
-          light: "#dddddd",    // svetli tekst na tamnoj pozadini (hero job)
+          base: "#767676",
+          heading: "#000000",
+          light: "#dddddd",
         },
-
         border: {
-          subtle: "rgba(0,0,0,0.2)", // input border, mobile menu border itd
-          soft: "rgba(0,0,0,0.09)",  // progress bar bg
+          subtle: "rgba(0,0,0,0.2)",
+          soft: "rgba(0,0,0,0.09)",
         },
-
-        // Glavna accent/brand boja (crimson)
         primary: "#e54b4b",
-
-        // Paleta tema 
         theme: {
           blue: "#4169e1",
           green: "#66B95C",
@@ -43,10 +36,22 @@ export default {
         },
       },
 
+      keyframes: {
+        scrollLine: {
+          "0%": { transform: "translateY(-100%)" },
+          "50%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(100%)" },
+        },
+      },
+
+      animation: {
+        scrollLine: "scrollLine 2s ease-in-out infinite",
+      },
+
       container: {
         center: true,
         padding: {
-          DEFAULT: "1.5rem", //
+          DEFAULT: "1.5rem",
           md: "2rem",
         },
         screens: {

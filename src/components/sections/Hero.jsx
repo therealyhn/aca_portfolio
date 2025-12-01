@@ -2,7 +2,7 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
+            className="relative min-h-screen flex items-center md:pl-[20%] overflow-hidden pt-24"
         >
             {/* Background image */}
             <div
@@ -11,25 +11,32 @@ export default function Hero() {
             />
 
             {/* Content */}
-            <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
+            <div className="relative z-10 max-w-6xl px-4 md:text-left text-center">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-extrabold tracking-tight mb-4">
                     Aleksandar <span className="text-white">Jovanovic</span>
                 </h1>
+
                 <p className="text-lg md:text-xl text-text-muted">
                     Photographer <span className="text-primary">&amp;</span> Graphic Designer
                 </p>
-
-                {/* Scroll down indicator */}
-                <div className="mt-12 flex justify-center">
-                    <a
-                        href="#about"
-                        className="inline-flex flex-col items-center text-[11px] uppercase tracking-[0.25em] text-text-muted hover:text-primary transition-colors"
-                    >
-                        <span className="mb-2">Scroll</span>
-                        <span className="h-16 w-px bg-primary inline-block" />
-                    </a>
-                </div>
             </div>
+
+            {/* Scroll Indicator — bottom centered */}
+            <a
+                href="#about"
+                className="
+                    absolute bottom-8 left-1/2 -translate-x-1/2 
+                    inline-flex flex-col items-center text-[11px] uppercase
+                    tracking-[0.25em] text-white hover:text-primary transition-colors
+                "
+            >
+                <span className="mb-2">Scroll</span>
+
+                {/* Animated vertical line */}
+                <span className="relative h-16 w-px bg-white/30 overflow-hidden">
+                    <span className="absolute top-0 left-0 w-full h-full bg-primary animate-scrollLine" />
+                </span>
+            </a>
         </section>
     );
 }

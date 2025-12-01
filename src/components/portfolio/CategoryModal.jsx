@@ -23,7 +23,7 @@ export default function CategoryModal({
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Header (NE scrolluje se) */}
-                <div className="flex items-center justify-between px-6 py-4 border-b border-border-subtle bg-background-soft z-10">
+                <div className="flex items-center justify-between px-6 py-4 border-b border-border-soft bg-background-soft shadow-md z-10">
                     <div>
                         <h3 className="text-xl font-semibold text-text-base">{title}</h3>
                         <p className="text-sm text-text-muted">
