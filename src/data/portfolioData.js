@@ -39,6 +39,48 @@ export const portfolioItems = [
         title: "Atletska trka",
         image: "/img/portfolio/5.jpg",
     },
+    {
+        id: 4,
+        categoryId: "sports",
+        title: "Atletska trka",
+        image: "/img/portfolio/5.jpg",
+    },
+    {
+        id: 5,
+        categoryId: "sports",
+        title: "Atletska trka",
+        image: "/img/portfolio/5.jpg",
+    },
+    {
+        id: 6,
+        categoryId: "sports",
+        title: "Atletska trka",
+        image: "/img/portfolio/5.jpg",
+    },
+    {
+        id: 7,
+        categoryId: "sports",
+        title: "Atletska trka",
+        image: "/img/portfolio/5.jpg",
+    },
+    {
+        id: 8,
+        categoryId: "sports",
+        title: "Atletska trka",
+        image: "/img/portfolio/5.jpg",
+    },
+    {
+        id: 9,
+        categoryId: "sports",
+        title: "Atletska trka",
+        image: "/img/portfolio/5.jpg",
+    },
+    {
+        id: 10,
+        categoryId: "sports",
+        title: "Atletska trka",
+        image: "/img/portfolio/5.jpg",
+    },
 
     // Fashion
     {

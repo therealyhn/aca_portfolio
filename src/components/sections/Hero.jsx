@@ -26,7 +26,7 @@ export default function Hero() {
                         className="inline-flex flex-col items-center text-[11px] uppercase tracking-[0.25em] text-text-muted hover:text-primary transition-colors"
                     >
                         <span className="mb-2">Scroll</span>
-                        <span className="h-10 w-px bg-primary inline-block" />
+                        <span className="h-16 w-px bg-primary inline-block" />
                     </a>
                 </div>
             </div>
