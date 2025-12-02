@@ -10,7 +10,7 @@ export default function Hero() {
                 style={{ backgroundImage: "url('/img/slider/2.jpg')" }}
             />
 
-            {/* Content */}
+            {/* Content
             <div className="relative z-10 max-w-6xl px-4 md:text-left text-center">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-extrabold tracking-tight mb-4">
                     Aleksandar <span className="text-white">Jovanovic</span>
@@ -19,7 +19,7 @@ export default function Hero() {
                 <p className="text-lg md:text-xl text-text-muted">
                     Photographer <span className="text-primary">&amp;</span> Graphic Designer
                 </p>
-            </div>
+            </div> */}
 
             {/* Scroll Indicator — bottom centered */}
             <a

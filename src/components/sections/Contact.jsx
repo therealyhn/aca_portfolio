@@ -2,28 +2,27 @@ export default function Contact() {
     return (
         <section
             id="contact"
-            className="py-20 md:py-24 bg-background relative overflow-hidden"
+            className="py-20 md:py-32 bg-background"
         >
-
             <div className="max-w-6xl mx-auto px-4">
                 {/* Naslov */}
-                <div className="mb-14">
+                <div className="mb-20">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.6em] uppercase text-text-heading">
                         <span className="mr-4">Get In</span>
                         <span className="text-primary">Touch</span>
                     </h2>
                 </div>
 
-                {/* dva stuba – info + forma */}
-                <div className="grid gap-12 md:grid-cols-2 md:items-start lg:items-center">
+                {/* Info + forma */}
+                <div className="grid gap-10 md:grid-cols-2 md:items-center lg:items-center">
                     {/* LEVA STRANA – tekst + info lista */}
-                    <div className="md:pr-6">
-                        <p className="text-text-base mb-10 text-base md:text-[15px] leading-relaxed max-w-lg">
+                    <div className="md:pr-2">
+                        <p className="text-text-base mb-10 text-base md:text-md leading-relaxed max-w-xl">
                             Please fill out the form on this section to contact with me. Or
                             call between 9:00 a.m. and 8:00 p.m. ET, Monday through Friday.
                         </p>
 
-                        <ul className="space-y-5 text-base md:text-[15px]">
+                        <ul className="space-y-6 text-sm md:text-[15px]">
                             <li className="flex items-start gap-4">
                                 <img
                                     src="/img/svg/location.svg"
@@ -31,7 +30,7 @@ export default function Contact() {
                                     className="mt-1 h-5 w-5"
                                 />
                                 <p>
-                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[110px] inline-block">
+                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block">
                                         Address:
                                     </span>
                                     <span className="text-text-base">
@@ -47,7 +46,7 @@ export default function Contact() {
                                     className="mt-1 h-5 w-5"
                                 />
                                 <p>
-                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[110px] inline-block">
+                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block">
                                         Email:
                                     </span>
                                     <a
@@ -66,7 +65,7 @@ export default function Contact() {
                                     className="mt-1 h-5 w-5"
                                 />
                                 <p>
-                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[110px] inline-block">
+                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block">
                                         Phone:
                                     </span>
                                     <a
@@ -85,7 +84,7 @@ export default function Contact() {
                                     className="mt-1 h-5 w-5"
                                 />
                                 <p>
-                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[110px] inline-block">
+                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block">
                                         Website:
                                     </span>
                                     <a
@@ -99,8 +98,8 @@ export default function Contact() {
                         </ul>
                     </div>
 
-                    {/* DESNA STRANA – forma kao u originalu */}
-                    <div className="flex items-start">
+                    {/* DESNA STRANA – forma */}
+                    <div className="flex items-stretch">
                         <form
                             action="https://api.web3forms.com/submit"
                             method="POST"
@@ -113,6 +112,7 @@ export default function Contact() {
                                 value={import.meta.env.VITE_WEB3FORMS_KEY}
                             />
 
+                            {/* Name */}
                             <input
                                 type="text"
                                 name="name"
@@ -121,6 +121,7 @@ export default function Contact() {
                                 className="w-full h-11 md:h-12 rounded-md border border-border-subtle bg-white px-4 text-sm text-text-base outline-none transition-colors focus:border-primary"
                             />
 
+                            {/* Email */}
                             <input
                                 type="email"
                                 name="email"
@@ -129,6 +130,15 @@ export default function Contact() {
                                 className="w-full h-11 md:h-12 rounded-md border border-border-subtle bg-white px-4 text-sm text-text-base outline-none transition-colors focus:border-primary"
                             />
 
+                            {/* Phone (novo polje) */}
+                            <input
+                                type="tel"
+                                name="phone"
+                                placeholder="Phone"
+                                className="w-full h-11 md:h-12 rounded-md border border-border-subtle bg-white px-4 text-sm text-text-base outline-none transition-colors focus:border-primary"
+                            />
+
+                            {/* Message */}
                             <textarea
                                 name="message"
                                 rows="5"
@@ -137,9 +147,10 @@ export default function Contact() {
                                 className="w-full rounded-md border border-border-subtle bg-white px-4 py-3 text-sm text-text-base outline-none transition-colors resize-none focus:border-primary"
                             />
 
+                            {/* Button */}
                             <button
                                 type="submit"
-                                className="mt-3 inline-flex w-full justify-center rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white tracking-[0.18em] uppercase hover:opacity-90 transition-opacity"
+                                className="mt-4 inline-flex w-full justify-center rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white tracking-[0.18em] uppercase hover:opacity-90 transition-opacity"
                             >
                                 Send Message
                             </button>

@@ -44,7 +44,7 @@ export default function Topbar() {
 
                 {/* Navigation */}
                 <nav>
-                    <ul className="flex items-center gap-8 text-sm font-medium">
+                    <ul className="flex items-center gap-8 text-md uppercase font-medium">
                         {navLinks.map((link) => {
                             const isActive = activeSection === link.href;
 
