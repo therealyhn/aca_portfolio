@@ -44,11 +44,12 @@ export default function ImageGalleryModal({
                     ×
                 </button>
 
-                {/* Image display */}
+                {/* Image + desktop strelice */}
                 <div className="flex-1 flex flex-col md:flex-row items-center gap-4 p-4 md:p-6">
-                    {/* Prev */}
+                    {/* Prev – DESKTOP ONLY (sa strane) */}
                     {items.length > 1 && (
                         <button
+                            type="button"
                             onClick={onPrev}
                             className="hidden md:inline-flex h-10 w-10 text-primary text-7xl items-center justify-center rounded-full"
                         >
@@ -71,11 +72,32 @@ export default function ImageGalleryModal({
                                 {activeIndex + 1} / {items.length}
                             </p>
                         </div>
+
+                        {/* MOBILE strelice ispod slike */}
+                        {items.length > 1 && (
+                            <div className="mt-4 flex md:hidden items-center justify-center gap-6">
+                                <button
+                                    type="button"
+                                    onClick={onPrev}
+                                    className="px-4 py-2 rounded-full border border-primary text-primary text-sm font-medium active:scale-95 transition"
+                                >
+                                    ‹ Prev
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={onNext}
+                                    className="px-4 py-2 rounded-full border border-primary text-primary text-sm font-medium active:scale-95 transition"
+                                >
+                                    Next ›
+                                </button>
+                            </div>
+                        )}
                     </div>
 
-                    {/* Next */}
+                    {/* Next – DESKTOP ONLY (sa strane) */}
                     {items.length > 1 && (
                         <button
+                            type="button"
                             onClick={onNext}
                             className="hidden md:inline-flex h-10 w-10 text-primary text-7xl items-center justify-center rounded-full"
                         >

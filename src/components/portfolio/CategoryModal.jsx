@@ -27,10 +27,11 @@ export default function CategoryModal({
                     </div>
 
                     <button
+                        type="button"
                         onClick={onClose}
-                        className="absolute top-3 right-4 z-20 inline-flex h-8 w-8 items-center justify-center rounded-full bg-black/70 text-white hover:bg-black"
+                        className="absolute right-6 top-3 z-10 text-text-muted hover:text-primary transition-colors text-4xl"
                     >
-                        X
+                        x
                     </button>
                 </div>
 
