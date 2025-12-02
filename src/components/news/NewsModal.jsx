@@ -2,20 +2,22 @@ export default function NewsModal({ post, onClose }) {
     if (!post) return null;
 
     return (
-        <div className="fixed inset-0 z-[60] bg-black/80 flex items-center justify-center">
-            <div className="relative w-full max-w-5xl max-h-[80vh] bg-white rounded-lg shadow-xl overflow-hidden">
-                {/* Close dugme gore desno */}
+        <div className="fixed inset-0 z-[60] bg-black/80 flex items-center justify-center p-4">
+            {/* OUTER CONTAINER — fiksna visina, modal se skroluje unutra */}
+            <div className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-lg shadow-xl overflow-hidden">
+
+                {/* Close button */}
                 <button
                     onClick={onClose}
-                    className="absolute top-3 right-3 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full bg-black/70 text-white hover:bg-black focus:outline-none"
-                    aria-label="Close"
+                    className="absolute top-3 right-4 z-20 inline-flex h-8 w-8 items-center justify-center rounded-full bg-black/70 text-white hover:bg-black"
                 >
-                    ×
+                    X
                 </button>
 
-                {/* Scrollable content */}
-                <div className="h-full overflow-y-auto">
-                    {/* Slika */}
+                {/* SCROLLABLE MODAL CONTENT */}
+                <div className="overflow-y-auto max-h-[90vh]">
+
+                    {/* Image */}
                     <div className="relative max-h-[320px] overflow-hidden">
                         <img
                             src={post.image}
@@ -24,12 +26,13 @@ export default function NewsModal({ post, onClose }) {
                         />
                     </div>
 
-                    {/* Tekstualni deo */}
-                    <div className="p-6 md:p-8 space-y-4">
-                        <div className="mb-4">
+                    {/* Text content */}
+                    <div className="p-6 md:p-8 space-y-5">
+                        <div>
                             <h2 className="text-2xl md:text-3xl font-semibold mb-2">
                                 {post.title}
                             </h2>
+
                             <p className="text-[11px] uppercase font-medium text-text-base/80 italic">
                                 By{" "}
                                 <span className="hover:text-primary transition-colors">
@@ -48,57 +51,34 @@ export default function NewsModal({ post, onClose }) {
                             </blockquote>
                         )}
 
-                        {/* Paragrafi */}
+                        {/* Paragraphs */}
                         <div className="space-y-3 text-sm leading-relaxed text-text-base">
-                            {post.content?.map((p, idx) => (
-                                <p key={idx}>{p}</p>
+                            {post.content?.map((p, i) => (
+                                <p key={i}>{p}</p>
                             ))}
                         </div>
 
-                        {/* Share */}
-                        <div className="mt-5 flex items-center gap-3">
+                        {/* Share section */}
+                        <div className="pt-3 flex items-center gap-3">
                             <span className="font-semibold text-text-heading">Share:</span>
                             <ul className="flex items-center gap-3">
                                 <li>
-                                    <a href="#" className="text-text-heading hover:text-primary">
-                                        <img
-                                            src="/img/svg/social/facebook.svg"
-                                            className="w-4 h-4"
-                                            alt="Facebook"
-                                        />
-                                    </a>
+                                    <img src="/img/svg/social/facebook.svg" className="w-4 h-4" />
                                 </li>
                                 <li>
-                                    <a href="#" className="text-text-heading hover:text-primary">
-                                        <img
-                                            src="/img/svg/social/twitter.svg"
-                                            className="w-4 h-4"
-                                            alt="Twitter"
-                                        />
-                                    </a>
+                                    <img src="/img/svg/social/twitter.svg" className="w-4 h-4" />
                                 </li>
                                 <li>
-                                    <a href="#" className="text-text-heading hover:text-primary">
-                                        <img
-                                            src="/img/svg/social/behance.svg"
-                                            className="w-4 h-4"
-                                            alt="Behance"
-                                        />
-                                    </a>
+                                    <img src="/img/svg/social/behance.svg" className="w-4 h-4" />
                                 </li>
                                 <li>
-                                    <a href="#" className="text-text-heading hover:text-primary">
-                                        <img
-                                            src="/img/svg/social/dribbble.svg"
-                                            className="w-4 h-4"
-                                            alt="Dribbble"
-                                        />
-                                    </a>
+                                    <img src="/img/svg/social/dribbble.svg" className="w-4 h-4" />
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                {/* END SCROLLABLE AREA */}
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { newsPosts } from "../data/newsData";
-import NewsCard from "../components/news/NewsCard";
-import NewsModal from "../components/news/NewsModal";
+import { newsPosts } from "../../data/newsData";
+import NewsCard from "../../components/news/NewsCard";
+import NewsModal from "../../components/news/NewsModal";
 
 export default function News() {
     const [activePost, setActivePost] = useState(null);
