@@ -2,33 +2,36 @@ export default function Contact() {
     return (
         <section
             id="contact"
-            className="py-20 md:py-24 bg-background relative"
+            className="py-20 md:py-24 bg-background relative overflow-hidden"
         >
+
             <div className="max-w-6xl mx-auto px-4">
                 {/* Naslov */}
-                <div className="mb-10">
-                    <h2 className="text-3xl md:text-4xl font-bold text-text-heading">
-                        Get in <span className="text-primary">Touch</span>
+                <div className="mb-14">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.6em] uppercase text-text-heading">
+                        <span className="mr-4">Get In</span>
+                        <span className="text-primary">Touch</span>
                     </h2>
                 </div>
 
-                <div className="grid gap-10 md:grid-cols-2 pt-6">
+                {/* dva stuba – info + forma */}
+                <div className="grid gap-12 md:grid-cols-2 md:items-start lg:items-center">
                     {/* LEVA STRANA – tekst + info lista */}
-                    <div>
-                        <p className="text-text-base mb-8 text-sm leading-relaxed">
-                            Please fill out the form on this section to contact with me.
-                            Or call between 9:00 a.m. and 8:00 p.m. ET, Monday through Friday.
+                    <div className="md:pr-6">
+                        <p className="text-text-base mb-10 text-base md:text-[15px] leading-relaxed max-w-lg">
+                            Please fill out the form on this section to contact with me. Or
+                            call between 9:00 a.m. and 8:00 p.m. ET, Monday through Friday.
                         </p>
 
-                        <ul className="space-y-4 text-sm">
-                            <li className="flex items-start gap-3">
+                        <ul className="space-y-5 text-base md:text-[15px]">
+                            <li className="flex items-start gap-4">
                                 <img
                                     src="/img/svg/location.svg"
-                                    alt=""
-                                    className="mt-1 h-4 w-4 text-text-heading"
+                                    alt="location"
+                                    className="mt-1 h-5 w-5"
                                 />
                                 <p>
-                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[90px] inline-block">
+                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[110px] inline-block">
                                         Address:
                                     </span>
                                     <span className="text-text-base">
@@ -37,129 +40,109 @@ export default function Contact() {
                                 </p>
                             </li>
 
-                            <li className="flex items-start gap-3">
+                            <li className="flex items-start gap-4">
                                 <img
                                     src="/img/svg/email.svg"
-                                    alt=""
-                                    className="mt-1 h-4 w-4 text-text-heading"
+                                    alt="email"
+                                    className="mt-1 h-5 w-5"
                                 />
                                 <p>
-                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[90px] inline-block">
+                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[110px] inline-block">
                                         Email:
                                     </span>
                                     <a
                                         href="mailto:example@gmail.com"
-                                        className="text-text-base relative inline-block hover:text-text-heading transition-colors"
+                                        className="text-text-base inline-block hover:text-primary transition-colors"
                                     >
                                         example@gmail.com
-                                        <span className="absolute left-0 right-0 -bottom-0.5 h-px bg-current scale-x-0 origin-right transition-transform duration-500 group-hover:origin-left group-hover:scale-x-100" />
                                     </a>
                                 </p>
                             </li>
 
-                            <li className="flex items-start gap-3">
+                            <li className="flex items-start gap-4">
                                 <img
                                     src="/img/svg/phone.svg"
-                                    alt=""
-                                    className="mt-1 h-4 w-4 text-text-heading"
+                                    alt="phone"
+                                    className="mt-1 h-5 w-5"
                                 />
                                 <p>
-                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[90px] inline-block">
+                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[110px] inline-block">
                                         Phone:
                                     </span>
                                     <a
                                         href="tel:+770334425557"
-                                        className="text-text-base relative inline-block hover:text-text-heading transition-colors"
+                                        className="text-text-base inline-block hover:text-primary transition-colors"
                                     >
                                         +77 033 442 55 57
                                     </a>
                                 </p>
                             </li>
 
-                            <li className="flex items-start gap-3">
+                            <li className="flex items-start gap-4">
                                 <img
                                     src="/img/svg/social/dribbble.svg"
-                                    alt=""
-                                    className="mt-1 h-4 w-4 text-text-heading"
+                                    alt="website"
+                                    className="mt-1 h-5 w-5"
                                 />
                                 <p>
-                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[90px] inline-block">
+                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[110px] inline-block">
                                         Website:
                                     </span>
                                     <a
                                         href="#"
-                                        className="text-text-base relative inline-block hover:text-text-heading transition-colors"
+                                        className="text-text-base inline-block hover:text-primary transition-colors"
                                     >
                                         www.myaddress.com
                                     </a>
                                 </p>
                             </li>
-
-                            {/* Dodaj/menjaj mreže po potrebi */}
                         </ul>
                     </div>
 
-                    {/* DESNA STRANA – forma (spremna za Web3Forms) */}
-                    <div>
+                    {/* DESNA STRANA – forma kao u originalu */}
+                    <div className="flex items-start">
                         <form
                             action="https://api.web3forms.com/submit"
                             method="POST"
-                            className="space-y-4"
+                            className="w-full space-y-4"
                         >
-                            {/* !!! OVDE UBACIŠ SVOJ WEB3FORMS ACCESS KEY !!! */}
+                            {/* WEB3FORMS ACCESS KEY */}
                             <input
                                 type="hidden"
                                 name="access_key"
-                                value="YOUR_WEB3FORMS_ACCESS_KEY"
+                                value={import.meta.env.VITE_WEB3FORMS_KEY}
                             />
 
-                            {/* (Opcija) subject / odakle poruka dolazi */}
                             <input
-                                type="hidden"
-                                name="subject"
-                                value="New message from portfolio contact form"
+                                type="text"
+                                name="name"
+                                placeholder="Name"
+                                required
+                                className="w-full h-11 md:h-12 rounded-md border border-border-subtle bg-white px-4 text-sm text-text-base outline-none transition-colors focus:border-primary"
                             />
 
-                            {/* Ime + Email */}
-                            <div className="grid gap-4 md:grid-cols-2">
-                                <input
-                                    type="text"
-                                    name="name"
-                                    placeholder="Name"
-                                    required
-                                    className="w-full rounded-md border border-border-subtle bg-white px-3 py-2 text-sm text-text-base outline-none focus:border-text-heading transition-colors"
-                                />
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Email"
-                                    required
-                                    className="w-full rounded-md border border-border-subtle bg-white px-3 py-2 text-sm text-text-base outline-none focus:border-text-heading transition-colors"
-                                />
-                            </div>
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Email"
+                                required
+                                className="w-full h-11 md:h-12 rounded-md border border-border-subtle bg-white px-4 text-sm text-text-base outline-none transition-colors focus:border-primary"
+                            />
 
-                            {/* Poruka */}
                             <textarea
                                 name="message"
                                 rows="5"
                                 placeholder="Message"
                                 required
-                                className="w-full rounded-md border border-border-subtle bg-white px-3 py-2 text-sm text-text-base outline-none focus:border-text-heading transition-colors resize-none"
+                                className="w-full rounded-md border border-border-subtle bg-white px-4 py-3 text-sm text-text-base outline-none transition-colors resize-none focus:border-primary"
                             />
 
-                            {/* Dugme */}
                             <button
                                 type="submit"
-                                className="inline-flex w-full justify-center rounded-md border-2 border-primary bg-primary px-6 py-2 text-sm font-semibold text-white hover:bg-transparent hover:text-text-heading transition-colors"
+                                className="mt-3 inline-flex w-full justify-center rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white tracking-[0.18em] uppercase hover:opacity-90 transition-opacity"
                             >
                                 Send Message
                             </button>
-
-                            {/* Info / poruke (možeš ih kasnije povezati sa custom JS logikom) */}
-                            <p className="mt-2 text-xs text-text-base/70">
-                                All fields are required. By submitting, you agree that we may
-                                contact you back regarding your inquiry.
-                            </p>
                         </form>
                     </div>
                 </div>

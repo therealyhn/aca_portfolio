@@ -18,7 +18,7 @@ export default function News() {
     }, [activePost]);
 
     return (
-        <section id="news" className="bg-background-soft/5 py-20 md:py-24">
+        <section id="news" className="bg-background-soft py-20 md:py-24">
             <div className="max-w-6xl mx-auto px-4">
                 {/* Title */}
                 <div className="mb-12">

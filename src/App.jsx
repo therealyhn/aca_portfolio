@@ -6,7 +6,7 @@ import Portfolio from "./components/sections/Portfolio";
 import Progress from "./components/sections/Progress";
 import Talk from "./components/sections/Talk";
 import News from "./components/sections/News";
-// import Contact from "./components/sections/Contact";
+import Contact from "./components/sections/Contact";
 // import Footer from "./components/layout/Footer";
 
 export default function App() {
@@ -26,7 +26,7 @@ export default function App() {
         <Progress />
         <Talk />
         <News />
-        {/* <Contact /> */}
+        <Contact />
       </main>
 
       {/* Footer / copyright */}
