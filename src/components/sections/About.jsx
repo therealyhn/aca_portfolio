@@ -26,7 +26,7 @@ export default function About() {
                         process, from discussion and collaboration.
                     </p>
 
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 text-sm md:text-lg italic font-bold">
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 text-md md:text-lg italic font-bold">
                         {[
                             "Web Development",
                             "Search Engine Optimization",
