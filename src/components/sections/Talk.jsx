@@ -18,7 +18,7 @@ export default function Talk() {
                     <h3 className="text-2xl md:text-3xl font-semibold text-white">
                         <span className="relative inline-block">
                             I'm available for freelance work
-                            <span className="absolute -bottom-1 left-full ml-2 h-1 w-5 bg-white animate-pulse" />
+                            <span className="hidden md:block absolute -bottom-1 left-full ml-2 h-1 w-5 bg-white animate-pulse" />
                         </span>
                     </h3>
                 </div>
