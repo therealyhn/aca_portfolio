@@ -28,7 +28,7 @@ export default function NewsCard({ post, onClick }) {
                     </h3>
                     <p className="text-[11px] uppercase font-medium text-text-base/80 italic">
                         By{" "}
-                        <span className="hover:text-primary transition-colors">
+                        <span className="text-primary transition-colors">
                             {post.author}
                         </span>
                         <span className="relative ml-3 pl-3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-px before:h-3 before:bg-neutral-400">

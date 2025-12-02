@@ -35,7 +35,7 @@ export default function NewsModal({ post, onClose }) {
 
                             <p className="text-[11px] uppercase font-medium text-text-base/80 italic">
                                 By{" "}
-                                <span className="hover:text-primary transition-colors">
+                                <span className="text-primary transition-colors">
                                     {post.author}
                                 </span>
                                 <span className="relative ml-3 pl-3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-px before:h-3 before:bg-neutral-400">
@@ -66,13 +66,13 @@ export default function NewsModal({ post, onClose }) {
                                     <img src="/img/svg/social/facebook.svg" className="w-4 h-4" />
                                 </li>
                                 <li>
-                                    <img src="/img/svg/social/twitter.svg" className="w-4 h-4" />
+                                    <img src="/img/svg/social/instagram.svg" className="w-4 h-4" />
                                 </li>
                                 <li>
-                                    <img src="/img/svg/social/behance.svg" className="w-4 h-4" />
+                                    <img src="/img/svg/social/tik-tok.svg" className="w-4 h-4" />
                                 </li>
                                 <li>
-                                    <img src="/img/svg/social/dribbble.svg" className="w-4 h-4" />
+                                    <img src="/img/svg/mail.svg" className="w-4 h-4" />
                                 </li>
                             </ul>
                         </div>
