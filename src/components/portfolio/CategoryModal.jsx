@@ -14,12 +14,7 @@ export default function CategoryModal({
             onClick={onClose}
         >
             <div
-                className="
-          relative bg-background rounded-xl shadow-2xl overflow-hidden
-          w-full max-w-[1100px]   
-          h-[85vh]               
-          flex flex-col
-        "
+                className="relative bg-background rounded-xl shadow-2xl overflow-hidden w-full max-w-[1100px] h-[85vh] flex flex-col"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Header (NE scrolluje se) */}
@@ -53,22 +48,13 @@ export default function CategoryModal({
                                     <button
                                         type="button"
                                         onClick={() => onItemClick(index)}
-                                        className="
-                      group block w-full text-left
-                      rounded-xl overflow-hidden bg-background-soft
-                      border border-border-subtle transition-all
-                      hover:border-primary hover:shadow-lg
-                    "
-                                    >
+                                        className="group block w-full text-left rounded-xl overflow-hidden bg-background-soft 
+                                        border border-border-subtle transition-all hover:border-primary hover:shadow-lg">
                                         <div className="aspect-[4/5] overflow-hidden">
                                             <img
                                                 src={item.image}
                                                 alt={item.title}
-                                                className="
-                          w-full h-full object-cover
-                          transition-transform duration-300 group-hover:scale-105
-                        "
-                                            />
+                                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                                         </div>
 
                                         <div className="px-3 py-2">
