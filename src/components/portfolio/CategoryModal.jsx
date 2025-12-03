@@ -39,7 +39,7 @@ export default function CategoryModal({
                 <div className="flex-1 overflow-y-auto px-6 py-6">
                     {items.length === 0 ? (
                         <p className="text-sm text-text-muted text-center">
-                            No images in this category.
+                            Ne postoje slike u ovoj kategoriji.
                         </p>
                     ) : (
                         <ul className="grid gap-4 sm:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">

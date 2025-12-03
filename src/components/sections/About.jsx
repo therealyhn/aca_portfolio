@@ -16,14 +16,14 @@ export default function About() {
                 {/* Tekst */}
                 <div>
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-heading">
-                        About <span className="text-primary">Me</span>
+                        O <span className="text-primary">Meni</span>
                     </h2>
                     <p className="text-theme-black mb-6 text-lg leading-relaxed">
-                        Hello! I'm Aleksandar Jovanovic, a graphic designer and professional
-                        photographer who loves blending bold visuals with authentic stories.
-                        Years of collaborating with brands and artists have helped me craft the
-                        instincts, reliability, and creative discipline needed to bring ideas
-                        to life - from initial sketches through the final polished image.
+                        Zdravo! Ja sam Aleksandar Jovanović, grafički dizajner i profesionalni
+                        fotograf koji voli da spaja hrabre vizuale sa autentičnim pričama.
+                        Godine saradnje sa brendovima i umetnicima pomogle su mi da izgradim
+                        instinkt, pouzdanost i kreativnu disciplinu potrebnu da ideje ožive -
+                        od prvih skica do finalne, ispolirane fotografije.
                     </p>
 
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 text-md md:text-lg italic font-bold">
@@ -45,7 +45,7 @@ export default function About() {
                         download
                         className="inline-flex items-center rounded-md border border-primary px-10 py-4 text-md font-medium text-white bg-primary hover:bg-white hover:text-primary transition-colors"
                     >
-                        Download CV
+                        Preuzmi CV
                     </a>
                 </div>
             </div>

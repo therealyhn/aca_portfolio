@@ -6,20 +6,21 @@ export default function Contact() {
         >
             <div className="max-w-6xl mx-auto px-4">
                 {/* Naslov */}
-                <div className="mb-20">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.6em] uppercase text-text-heading">
-                        <span className="mr-4">Get In</span>
-                        <span className="text-primary">Touch</span>
+                <div className="mb-12 md:mb-20 text-center md:text-left">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold uppercase tracking-[0.25em] md:tracking-[0.6em]
+                     text-text-heading flex flex-col gap-2 sm:flex-row sm:gap-4 items-center sm:items-end justify-center md:justify-start">
+                        <span>Zakažite</span>
+                        <span className="text-primary">Projekat</span>
                     </h2>
                 </div>
 
                 {/* Info + forma */}
                 <div className="grid gap-10 md:grid-cols-2 md:items-center lg:items-center">
                     {/* LEVA STRANA – tekst + info lista */}
-                    <div className="md:pr-2">
+                    <div className="md:pr-2 flex flex-col gap-">
                         <p className="text-text-base mb-10 text-base md:text-md leading-relaxed max-w-xl">
-                            Please fill out the form on this section to contact with me. Or
-                            call between 9:00 a.m. and 8:00 p.m. ET, Monday through Friday.
+                            Molim vas popunite formular u ovom delu stranice kako biste me kontaktirali
+                            ili pozovite između 9:00 i 20:00, od ponedeljka do petka.
                         </p>
 
                         <ul className="space-y-6 text-sm md:text-[15px]">
@@ -31,10 +32,10 @@ export default function Contact() {
                                 />
                                 <p>
                                     <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block">
-                                        Address:
+                                        Adresa:
                                     </span>
                                     <span className="text-text-base">
-                                        Brook 103, New York, USA
+                                        Kralja Petra 123, Požarevac
                                     </span>
                                 </p>
                             </li>
@@ -53,7 +54,7 @@ export default function Contact() {
                                         href="mailto:example@gmail.com"
                                         className="text-text-base inline-block hover:text-primary transition-colors"
                                     >
-                                        example@gmail.com
+                                        kontakt@ajcreative.com
                                     </a>
                                 </p>
                             </li>
@@ -66,32 +67,32 @@ export default function Contact() {
                                 />
                                 <p>
                                     <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block">
-                                        Phone:
+                                        Telefon:
                                     </span>
                                     <a
                                         href="tel:+770334425557"
                                         className="text-text-base inline-block hover:text-primary transition-colors"
                                     >
-                                        +77 033 442 55 57
+                                        +381 061 123 456
                                     </a>
                                 </p>
                             </li>
 
                             <li className="flex items-start gap-4">
                                 <img
-                                    src="/img/svg/social/dribbble.svg"
-                                    alt="website"
+                                    src="/img/svg/social/instagram.svg"
+                                    alt="instagram"
                                     className="mt-1 h-5 w-5"
                                 />
                                 <p>
                                     <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block">
-                                        Website:
+                                        Instagram:
                                     </span>
                                     <a
                                         href="#"
                                         className="text-text-base inline-block hover:text-primary transition-colors"
                                     >
-                                        www.myaddress.com
+                                        @ajcreative
                                     </a>
                                 </p>
                             </li>
@@ -116,7 +117,7 @@ export default function Contact() {
                             <input
                                 type="text"
                                 name="name"
-                                placeholder="Name"
+                                placeholder="Ime i Prezime"
                                 required
                                 className="w-full h-11 md:h-12 rounded-md border border-border-subtle bg-white px-4 text-sm text-text-base outline-none transition-colors focus:border-primary"
                             />
@@ -134,7 +135,7 @@ export default function Contact() {
                             <input
                                 type="tel"
                                 name="phone"
-                                placeholder="Phone"
+                                placeholder="Telefon"
                                 className="w-full h-11 md:h-12 rounded-md border border-border-subtle bg-white px-4 text-sm text-text-base outline-none transition-colors focus:border-primary"
                             />
 
@@ -142,7 +143,7 @@ export default function Contact() {
                             <textarea
                                 name="message"
                                 rows="5"
-                                placeholder="Message"
+                                placeholder="Poruka..."
                                 required
                                 className="w-full rounded-md border border-border-subtle bg-white px-4 py-3 text-sm text-text-base outline-none transition-colors resize-none focus:border-primary"
                             />
@@ -152,7 +153,7 @@ export default function Contact() {
                                 type="submit"
                                 className="mt-4 inline-flex w-full justify-center rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white tracking-[0.18em] uppercase hover:opacity-90 transition-opacity"
                             >
-                                Send Message
+                                Pošalji Poruku
                             </button>
                         </form>
                     </div>

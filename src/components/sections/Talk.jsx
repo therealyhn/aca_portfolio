@@ -17,7 +17,7 @@ export default function Talk() {
                 <div className="md:max-w-xl">
                     <h3 className="text-2xl md:text-3xl font-semibold text-white">
                         <span className="relative inline-block">
-                            I'm available for freelance work
+                            Otvoren sam za nove projekte
                             <span className="hidden md:block absolute -bottom-1 left-full ml-2 h-1 w-5 bg-white animate-pulse" />
                         </span>
                     </h3>
@@ -29,7 +29,7 @@ export default function Talk() {
                         href="#contact"
                         className="group inline-flex items-center text-sm md:text-base font-semibold text-white tracking-[0.15em] uppercase relative pb-1"
                     >
-                        Contact Me
+                        Zakaži Projekat
 
                         {/* tanka statična linija */}
                         <span className="absolute bottom-0 left-0 w-full h-[2px] bg-white/30" />

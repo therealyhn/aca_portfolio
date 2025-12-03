@@ -1,20 +1,20 @@
 export const portfolioCategories = [
     {
         id: "sports",
-        title: "Sports Photography",
-        description: "Dynamic moments from sporting events.",
-        coverImage: "/img/portfolio/1.jpg", // main image for the category card
+        title: "Sportska fotografija",
+        description: "Dinamični momenti sa sportskih događaja.",
+        coverImage: "/img/portfolio/1.jpg", // glavna slika za karticu kategorije
     },
     {
         id: "fashion",
-        title: "Fashion Photography",
-        description: "Editorials, lookbooks, and campaigns.",
+        title: "Modna fotografija",
+        description: "Editorial, lookbook i kampanje.",
         coverImage: "/img/portfolio/2.jpg",
     },
     {
         id: "wedding",
-        title: "Weddings",
-        description: "Emotional stories captured throughout the wedding day.",
+        title: "Venčanja",
+        description: "Emotivne priče zabeležene kroz dan venčanja.",
         coverImage: "/img/portfolio/3.jpg",
     },
 ];
@@ -24,61 +24,61 @@ export const portfolioItems = [
     {
         id: 1,
         categoryId: "sports",
-        title: "Basketball Game",
+        title: "Košarkaški meč",
         image: "/img/portfolio/1.jpg",
     },
     {
         id: 2,
         categoryId: "sports",
-        title: "Football Training",
+        title: "Fudbalski trening",
         image: "/img/portfolio/4.jpg",
     },
     {
         id: 3,
         categoryId: "sports",
-        title: "Track Race",
+        title: "Atletska trka",
         image: "/img/portfolio/5.jpg",
     },
     {
         id: 4,
         categoryId: "sports",
-        title: "Track Race",
+        title: "Atletska trka",
         image: "/img/portfolio/5.jpg",
     },
     {
         id: 5,
         categoryId: "sports",
-        title: "Track Race",
+        title: "Atletska trka",
         image: "/img/portfolio/5.jpg",
     },
     {
         id: 6,
         categoryId: "sports",
-        title: "Track Race",
+        title: "Atletska trka",
         image: "/img/portfolio/5.jpg",
     },
     {
         id: 7,
         categoryId: "sports",
-        title: "Track Race",
+        title: "Atletska trka",
         image: "/img/portfolio/5.jpg",
     },
     {
         id: 8,
         categoryId: "sports",
-        title: "Track Race",
+        title: "Atletska trka",
         image: "/img/portfolio/5.jpg",
     },
     {
         id: 9,
         categoryId: "sports",
-        title: "Track Race",
+        title: "Atletska trka",
         image: "/img/portfolio/5.jpg",
     },
     {
         id: 10,
         categoryId: "sports",
-        title: "Track Race",
+        title: "Atletska trka",
         image: "/img/portfolio/5.jpg",
     },
 
@@ -86,7 +86,7 @@ export const portfolioItems = [
     {
         id: 4,
         categoryId: "fashion",
-        title: "Studio Editorial",
+        title: "Editorial u studiju",
         image: "/img/portfolio/2.jpg",
     },
     {
@@ -100,13 +100,13 @@ export const portfolioItems = [
     {
         id: 6,
         categoryId: "wedding",
-        title: "Bridal Preparations",
+        title: "Pripreme mlade",
         image: "/img/portfolio/3.jpg",
     },
     {
         id: 7,
         categoryId: "wedding",
-        title: "First Dance",
+        title: "Prvi ples",
         image: "/img/portfolio/5.jpg",
     },
 ];

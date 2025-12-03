@@ -3,7 +3,7 @@ import MobileMenu from "./components/layout/Mobile";
 import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
 import Portfolio from "./components/sections/Portfolio";
-import Progress from "./components/sections/Progress";
+// import Progress from "./components/sections/Progress";
 import Talk from "./components/sections/Talk";
 import News from "./components/sections/News";
 import Contact from "./components/sections/Contact";
@@ -21,7 +21,7 @@ export default function App() {
         <Hero />
         <About />
         <Portfolio />
-        <Progress />
+        {/* <Progress /> */}
         <Talk />
         <News />
         <Contact />

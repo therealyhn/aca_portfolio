@@ -21,9 +21,9 @@ export default function News() {
         <section id="news" className="bg-background-soft py-20 md:py-24">
             <div className="max-w-6xl mx-auto px-4">
                 {/* Title */}
-                <div className="mb-12">
-                    <h2 className="text-sm md:text-base tracking-[0.6em] uppercase font-semibold text-text-heading mb-2">
-                        Latest <span className="text-primary">News</span>
+                <div className="mb-12 text-center md:text-left">
+                    <h2 className="text-sm md:text-base tracking-[0.2em] md:tracking-[0.6em] uppercase font-semibold text-text-heading mb-2 inline-block">
+                        Najnovije sa <span className="text-primary">Bloga</span>
                     </h2>
                 </div>
 

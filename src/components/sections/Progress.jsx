@@ -29,12 +29,14 @@ export default function Progress() {
                 {/* Levi deo – tekst */}
                 <div className="space-y-4">
                     <h3 className="text-2xl md:text-3xl font-semibold text-text-heading">
-                        I have high skills in developing and programming
+                        Visok nivo veština u grafičkom dizajnu i fotografiji
                     </h3>
                     <p className="text-sm md:text-base text-text-muted leading-relaxed">
-                        I was doing everything in my power to provide me with all the
-                        experiences to provide cost-effective and high quality products
-                        to satisfy my customers all over the world.
+                        Kao grafički dizajner i profesionalni fotograf, godinama usavršavam
+                        svoj rad na vizuelnim identitetima, kampanjama i fotografijama koje
+                        pričaju jasnu priču o brendu. Kombinujem kreativnost, tehničko znanje
+                        i posvećenost detaljima kako bih isporučio radove koji izgledaju
+                        profesionalno i ostavljaju snažan utisak.
                     </p>
                 </div>
 

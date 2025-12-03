@@ -79,16 +79,16 @@ export default function ImageGalleryModal({
                                 <button
                                     type="button"
                                     onClick={onPrev}
-                                    className="px-4 py-2 rounded-full border border-primary text-primary text-sm font-medium active:scale-95 transition"
+                                    className="px-4 py-2 text-primary text-2xl font-medium active:scale-95 transition"
                                 >
-                                    ‹ Prev
+                                    ‹
                                 </button>
                                 <button
                                     type="button"
                                     onClick={onNext}
-                                    className="px-4 py-2 rounded-full border border-primary text-primary text-sm font-medium active:scale-95 transition"
+                                    className="px-4 py-2 text-primary text-2xl font-medium active:scale-95 transition"
                                 >
-                                    Next ›
+                                    ›
                                 </button>
                             </div>
                         )}
