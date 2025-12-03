@@ -23,7 +23,8 @@ export default function Topbar() {
 
     return (
         <header className={`fixed top-0 left-0 right-0 z-40 hidden md:block transition-all duration-500 ${scrolled ? "bg-white shadow-md py-4" : "bg-transparent py-7"}`}>
-            <div className="max-w-6xl xl2:max-w-7xl xl3:max-w-[1600px] xl4:max-w-[1800px] mx-auto px-4 flex items-center justify-between animate__animated animate__fadeInDown">
+            <div className="max-w-6xl xl2:max-w-7xl xl3:max-w-[1600px] xl4:max-w-[1800px] mx-auto px-4 flex items-center justify-between ">
+            {/* animate__animated animate__fadeInDown */}
                 {/* Logo */}
                 <a href="#home">
                     {!scrolled ? (

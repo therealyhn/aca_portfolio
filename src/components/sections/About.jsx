@@ -35,7 +35,7 @@ export default function About() {
                 </div>
 
                 {/* Tekst */}
-                <div className={visible ? "animate__animated animate__fadeInRight animate__slow" : "opacity-0"}>
+                <div className={visible ? "animate__animated animate__fadeIn animate__slow" : "opacity-0"}>
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-heading">
                         O <span className="text-primary">Meni</span>
                     </h2>
