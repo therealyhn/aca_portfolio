@@ -19,19 +19,19 @@ export default function About() {
                         About <span className="text-primary">Me</span>
                     </h2>
                     <p className="text-theme-black mb-6 text-lg leading-relaxed">
-                        Hello! I'm Alan Walker. I'm a web developer, and I'm very passionate
-                        and dedicated to my work. With 20 years experience as a professional
-                        web developer, I have acquired the skills and knowledge necessary to
-                        make your project a success. I enjoy every step of the design
-                        process, from discussion and collaboration.
+                        Hello! I'm Aleksandar Jovanovic, a graphic designer and professional
+                        photographer who loves blending bold visuals with authentic stories.
+                        Years of collaborating with brands and artists have helped me craft the
+                        instincts, reliability, and creative discipline needed to bring ideas
+                        to life - from initial sketches through the final polished image.
                     </p>
 
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 text-md md:text-lg italic font-bold">
                         {[
-                            "Web Development",
-                            "Search Engine Optimization",
-                            "Social Media Marketing",
-                            "Content Generation",
+                            "Lorem Ipsum 1",
+                            "Lorem Ipsum 2",
+                            "Lorem Ipsum 3",
+                            "Lorem Ipsum 4",
                         ].map((item) => (
                             <li key={item} className="flex items-center gap-2">
                                 <span className="h-2 w-2 rounded-full bg-primary" />

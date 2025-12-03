@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import useActiveSection from "../../hooks/useActiveSection";
 
 const navLinks = [
-    { label: "Home", href: "home" },
-    { label: "About", href: "about" },
+    { label: "Početna", href: "home" },
+    { label: "O meni", href: "about" },
     { label: "Portfolio", href: "portfolio" },
-    { label: "News", href: "news" },
-    { label: "Contact", href: "contact" },
+    { label: "Blog", href: "news" },
+    { label: "Kontakt", href: "contact" },
 ];
 
 export default function Topbar() {

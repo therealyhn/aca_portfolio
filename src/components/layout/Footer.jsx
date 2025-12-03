@@ -16,7 +16,7 @@ export default function Footer() {
 
                     {/* Centar — Social ikone */}
                     <div className="flex justify-center gap-6">
-                        {["facebook", "twitter", "instagram", "dribbble"].map((icon) => (
+                        {["facebook", "twitter", "instagram"].map((icon) => (
                             <a key={icon} href="#" className="group">
                                 <img
                                     src={`/img/svg/social/${icon}.svg`}
@@ -33,7 +33,7 @@ export default function Footer() {
                             © {new Date().getFullYear()} Aleksandar Jovanović
                         </p>
                         <p className="text-xs text-gray-500 tracking-wide">
-                            All rights reserved.
+                            Sva prava zadržana.
                         </p>
                     </div>
                 </div>
@@ -43,8 +43,8 @@ export default function Footer() {
 
                 {/* Potpis */}
                 <p className="text-center text-xs text-gray-500">
-                    Designed &amp; Developed by{" "}
-                    <span className="text-primary font-semibold">Jovan Ljusić</span>
+                    Dizajnirano &amp; razvijeno od strane{" "}
+                    <span className="text-primary font-semibold">Jovan Ljušić</span>
                 </p>
             </div>
         </footer>
