@@ -39,7 +39,7 @@ export default function ImageGalleryModal({
                 <button
                     type="button"
                     onClick={onClose}
-                    className="absolute right-3 top-3 z-10 text-text-muted hover:text-primary transition-colors text-4xl"
+                    className="absolute right-1 top-[-5px] md:right-3 md:top-3 z-10 text-text-muted hover:text-primary transition-colors text-3xl md:text-4xl"
                 >
                     ×
                 </button>
