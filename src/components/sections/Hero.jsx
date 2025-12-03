@@ -28,6 +28,7 @@ export default function Hero() {
                     absolute bottom-8 left-1/2 -translate-x-1/2 
                     inline-flex flex-col items-center text-[11px] uppercase
                     tracking-[0.25em] text-white hover:text-primary transition-colors
+                    animate__animated animate__fadeInUp
                 "
             >
                 <span className="mb-2">Scroll</span>

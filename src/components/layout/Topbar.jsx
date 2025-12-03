@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useActiveSection from "../../hooks/useActiveSection";
+import "animate.css";
 
 const navLinks = [
     { label: "Početna", href: "home" },
@@ -11,28 +12,18 @@ const navLinks = [
 
 export default function Topbar() {
     const [scrolled, setScrolled] = useState(false);
-
     const activeSection = useActiveSection(navLinks.map((link) => link.href));
 
     useEffect(() => {
-        const onScroll = () => {
-            setScrolled(window.scrollY > 80);
-        };
-
+        const onScroll = () => setScrolled(window.scrollY > 80);
         onScroll();
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
     return (
-        <header
-            className={`
-        fixed top-0 left-0 right-0 z-40 hidden md:block
-        transition-all duration-500
-        ${scrolled ? "bg-white shadow-md py-4" : "bg-transparent py-7"}
-      `}
-        >
-            <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
+        <header className={`fixed top-0 left-0 right-0 z-40 hidden md:block transition-all duration-500 ${scrolled ? "bg-white shadow-md py-4" : "bg-transparent py-7"}`}>
+            <div className="max-w-6xl xl2:max-w-7xl xl3:max-w-[1600px] xl4:max-w-[1800px] mx-auto px-4 flex items-center justify-between animate__animated animate__fadeInDown">
                 {/* Logo */}
                 <a href="#home">
                     {!scrolled ? (
@@ -44,7 +35,7 @@ export default function Topbar() {
 
                 {/* Navigation */}
                 <nav>
-                    <ul className="flex items-center gap-8 text-md uppercase font-medium">
+                    <ul className="flex items-center gap-8 text-sm uppercase font-medium">
                         {navLinks.map((link) => {
                             const isActive = activeSection === link.href;
 
@@ -52,22 +43,13 @@ export default function Topbar() {
                                 <li key={link.href} className="relative">
                                     <a
                                         href={`#${link.href}`}
-                                        className={`
-                      transition-colors pb-1
-                      ${scrolled ? "text-black" : "text-white"}
-                      ${isActive ? "text-primary" : "hover:text-primary"}
-                    `}
+                                        className={`transition-colors pb-1 ${scrolled ? "text-black" : "text-white"} ${isActive ? "text-primary" : "hover:text-primary"}`}
                                     >
                                         {link.label}
                                     </a>
 
                                     {/* ACTIVE UNDERLINE */}
-                                    <span
-                                        className={`
-                      absolute left-0 right-0 -bottom-1 h-[2px] bg-primary transition-all
-                      ${isActive ? "opacity-100 w-full" : "opacity-0 w-0"}
-                    `}
-                                    />
+                                    <span className={`absolute left-0 right-0 -bottom-1 h-[2px] bg-primary transition-all ${isActive ? "opacity-100 w-full" : "opacity-0 w-0"}`} />
                                 </li>
                             );
                         })}
