@@ -10,7 +10,7 @@ export default function NewsModal({ post, onClose }) {
                 <button
                     type="button"
                     onClick={onClose}
-                    className="absolute right-10 top-3 z-10 text-text-muted hover:text-primary transition-colors text-4xl"
+                    className="absolute right-6 md:right-10 top-3 z-10 text-text-muted hover:text-primary transition-colors text-4xl"
                 >
                     x
                 </button>
