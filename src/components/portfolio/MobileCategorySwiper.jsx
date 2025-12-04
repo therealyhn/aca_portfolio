@@ -24,7 +24,7 @@ export default function MobileCategorySwiper({ categories, onCategoryClick }) {
                     bulletClass: "swiper-pagination-bullet bg-gray-400 opacity-50",
                     bulletActiveClass: "swiper-pagination-bullet-active bg-primary opacity-100",
                 }}
-                className="pb-10"
+                className="relative z-20 pb-10"
             >
                 {categories.map((category) => (
                     <SwiperSlide key={category.id}>
@@ -37,12 +37,12 @@ export default function MobileCategorySwiper({ categories, onCategoryClick }) {
                 ))}
 
                 {/* Strelice */}
-                {/* <button className="mobile-prev absolute left-0 top-1/2 -translate-y-1/2 text-4xl text-primary opacity-50 active:opacity-100 transition">
+                <button className="mobile-prev absolute left-2 top-[43%] -translate-y-1/2 text-4xl text-primary opacity-70 hover:opacity-100 transition z-50 pointer-events-auto">
                     ‹
                 </button>
-                <button className="mobile-next absolute right-0 top-1/2 -translate-y-1/2 text-4xl text-primary opacity-50 active:opacity-100 transition">
+                <button className="mobile-next absolute right-2  top-[43%] -translate-y-1/2 text-4xl text-primary opacity-70 hover:opacity-100 transition z-50 pointer-events-auto">
                     ›
-                </button> */}
+                </button>
             </Swiper>
         </div>
     );
