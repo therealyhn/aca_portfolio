@@ -35,7 +35,7 @@ export default function About() {
                 </div>
 
                 {/* Tekst */}
-                <div className={visible ? "animate__animated animate__fadeIn animate__slow" : "opacity-0"}>
+                <div className={`${visible ? "animate__animated animate__fadeIn animate__slow" : "opacity-0"} px-0 py-1 md:p-14 md:text-start text-center`}>
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-heading">
                         O <span className="text-primary">Meni</span>
                     </h2>
@@ -43,23 +43,25 @@ export default function About() {
                         Zdravo! Ja sam Aleksandar Jovanović, grafički dizajner i profesionalni fotograf koji voli da spaja hrabre vizuale sa autentičnim pričama.
                         Godine saradnje sa brendovima i umetnicima pomogle su mi da izgradim instinkt, pouzdanost i kreativnu disciplinu potrebnu da ideje ožive – od prvih skica do finalne, ispolirane fotografije.
                     </p>
+                    <div className="flex flex-col justify-center md:items-start items-center">
+                        <ul className="grid grid-cols-2 md:grid-cols-2 w-full gap-3 mb-8 text-md md:text-lg italic font-bold">
+                            {["Lorem Ipsum 1", "Lorem Ipsum 2", "Lorem Ipsum 3", "Lorem Ipsum 4"].map((item) => (
+                                <li key={item} className="flex items-center gap-2">
+                                    <span className="h-2 w-2 rounded-full bg-primary" />
+                                    <span className="text-black">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
 
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 text-md md:text-lg italic font-bold">
-                        {["Lorem Ipsum 1", "Lorem Ipsum 2", "Lorem Ipsum 3", "Lorem Ipsum 4"].map((item) => (
-                            <li key={item} className="flex items-center gap-2">
-                                <span className="h-2 w-2 rounded-full bg-primary" />
-                                <span className="text-black">{item}</span>
-                            </li>
-                        ))}
-                    </ul>
+                        <a
+                            href="/img/resume/resume.jpg"
+                            download
+                            className="rounded-md border border-primary px-10 py-4 text-md font-medium text-white bg-primary hover:bg-white hover:text-primary transition-colors"
+                        >
+                            Preuzmi CV
+                        </a>
+                    </div>
 
-                    <a
-                        href="/img/resume/resume.jpg"
-                        download
-                        className="inline-flex items-center rounded-md border border-primary px-10 py-4 text-md font-medium text-white bg-primary hover:bg-white hover:text-primary transition-colors"
-                    >
-                        Preuzmi CV
-                    </a>
                 </div>
             </div>
         </section>

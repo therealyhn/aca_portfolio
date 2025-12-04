@@ -25,7 +25,7 @@ export default function Hero() {
             <a
                 href="#about"
                 className="
-                    absolute bottom-8 left-1/2 -translate-x-1/2 
+                    absolute bottom-8 left-[43%] md:left-1/2 -translate-x-1/2 transform
                     inline-flex flex-col items-center text-[11px] uppercase
                     tracking-[0.25em] text-white hover:text-primary transition-colors
                     animate__animated animate__fadeInUp
