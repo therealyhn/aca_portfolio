@@ -26,7 +26,7 @@ export default function About() {
 
     return (
         <section id="about" ref={sectionRef} className="py-20">
-            <div className="max-w-6xl xl2:max-w-7xl xl3:max-w-[1600px] xl4:max-w-[1800px] mx-auto px-4 grid gap-10 md:grid-cols-2 items-center">
+            <div className="max-w-7xl xl2:max-w-8xl xl3:max-w-[1600px] xl4:max-w-[1800px] mx-auto px-4 grid gap-10 md:grid-cols-2 items-center">
                 {/* Slika */}
                 <div className="relative">
                     <div className={`aspect-[3/4] overflow-hidden rounded-2xl border border-border-subtle shadow-lg shadow-primary/10 ${visible ? "animate__animated animate__fadeInLeft animate__slow" : "opacity-0"}`}>

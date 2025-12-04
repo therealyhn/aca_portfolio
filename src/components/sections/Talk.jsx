@@ -12,11 +12,11 @@ export default function Talk() {
             <div className="pointer-events-none absolute inset-0 bg-black/90 z-10" />
 
             {/* CONTENT IZABD SVEGA */}
-            <div className="relative z-20 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="relative z-20 max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-6">
                 {/* Tekst */}
                 <div className="md:max-w-xl">
                     <h3 className="text-2xl md:text-3xl font-semibold text-white">
-                        <span className="relative inline-block">
+                        <span className="relative inline-block text-center">
                             Otvoren sam za nove projekte
                             <span className="hidden md:block absolute -bottom-1 left-full ml-2 h-1 w-5 bg-white animate-pulse" />
                         </span>

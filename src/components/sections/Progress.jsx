@@ -25,7 +25,7 @@ function ProgressBar({ label, value }) {
 export default function Progress() {
     return (
         <section className="bg-background py-20 md:py-24">
-            <div className="max-w-6xl mx-auto px-4 grid gap-10 md:grid-cols-2 items-start">
+            <div className="max-w-7xl mx-auto px-4 grid gap-10 md:grid-cols-2 items-start">
                 {/* Levi deo – tekst */}
                 <div className="space-y-4">
                     <h3 className="text-2xl md:text-3xl font-semibold text-text-heading">

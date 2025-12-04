@@ -4,7 +4,7 @@ export default function Contact() {
             id="contact"
             className="py-20 md:py-32 bg-background"
         >
-            <div className="max-w-6xl mx-auto px-4">
+            <div className="max-w-7xl mx-auto px-4">
                 {/* Naslov */}
                 <div className="mb-12 md:mb-20 text-center md:text-left">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold uppercase tracking-[0.25em] md:tracking-[0.6em]

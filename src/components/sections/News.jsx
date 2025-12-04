@@ -19,7 +19,7 @@ export default function News() {
 
     return (
         <section id="news" className="bg-background-soft py-20 md:py-24">
-            <div className="max-w-6xl mx-auto px-4">
+            <div className="max-w-7xl mx-auto px-4">
                 {/* Title */}
                 <div className="mb-12 text-center md:text-left">
                     <h2 className="text-sm md:text-base tracking-[0.2em] md:tracking-[0.6em] uppercase font-semibold text-text-heading mb-2 inline-block">
@@ -29,7 +29,7 @@ export default function News() {
 
                 {/* Lista kartica */}
                 <div className="pt-6">
-                    <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <ul className="grid gap-20 sm:grid-cols-2 lg:grid-cols-3">
                         {newsPosts.map((post) => (
                             <NewsCard
                                 key={post.id}
