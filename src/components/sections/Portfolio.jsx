@@ -1,33 +1,34 @@
 import { useEffect, useState } from "react";
-import { portfolioCategories, portfolioItems, } from "../../data/portfolioData";
+import { portfolioCategories, portfolioItems } from "../../data/portfolioData";
 import CategoryCard from "../portfolio/CategoryCard";
 import CategoryModal from "../portfolio/CategoryModal";
 import ImageGalleryModal from "../portfolio/ImageGalleryModal";
+import "animate.css";
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState(null);
   const [activeImageIndex, setActiveImageIndex] = useState(null);
+  const [showAll, setShowAll] = useState(false);
 
-  // Radovi koji pripadaju aktivnoj kategoriji
+  // Radovi za aktivnu kategoriju
   const itemsForActiveCategory = activeCategory
-    ? portfolioItems.filter(
-      (item) => item.categoryId === activeCategory.id
-    )
+    ? portfolioItems.filter((item) => item.categoryId === activeCategory.id)
     : [];
+
+  // Koje kategorije su trenutno vidljive
+  const visibleCategories = showAll
+    ? portfolioCategories
+    : portfolioCategories.slice(0, 3);
 
   const openCategory = (category) => {
     setActiveCategory(category);
-    setActiveImageIndex(null); // reset slike
+    setActiveImageIndex(null);
   };
 
   const closeCategory = () => {
     setActiveCategory(null);
     setActiveImageIndex(null);
   };
-
-  // const openImage = (index) => {
-  //   setActiveImageIndex(index);
-  // };
 
   const closeImage = () => {
     setActiveImageIndex(null);
@@ -47,38 +48,51 @@ export default function Portfolio() {
     });
   };
 
-  // Lock scroll 
+  // Lock scroll kada je otvoren bilo koji modal
   useEffect(() => {
-    if (activeCategory) {
-      const prev = document.body.style.overflow;
-      document.body.style.overflow = "hidden";
-      return () => {
-        document.body.style.overflow = prev;
-      };
-    }
+    const hasModalOpen = activeCategory !== null;
+    if (!hasModalOpen) return;
+
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
   }, [activeCategory]);
 
   return (
     <section id="portfolio" className="bg-background-soft py-20 md:py-24">
       <div className="max-w-7xl mx-auto px-4">
-        {/* Title */}
+        {/* Naslov */}
         <div className="mb-12 text-center md:text-left">
-          <h2 className="text-sm md:text-base tracking-[0.2em] md:tracking-[0.6em] uppercase font-semibold text-text-heading mb-2 inline-block">
+          <h2 className="inline-block text-xs sm:text-sm md:text-base tracking-[0.25em] md:tracking-[0.6em] uppercase font-semibold text-text-heading mb-2 animate__animated animate__fadeInUp">
             Odabrani <span className="text-primary">Radovi</span>
           </h2>
         </div>
 
         {/* Grid kategorija */}
         <div className="pt-6">
-          <ul className="grid gap-20 sm:grid-cols-2 lg:grid-cols-3">
-            {portfolioCategories.map((category) => (
+          <ul className="grid gap-8 sm:gap-10 lg:gap-14 sm:grid-cols-2 lg:grid-cols-3">
+            {visibleCategories.map((category) => (
               <CategoryCard
                 key={category.id}
                 category={category}
                 onClick={() => openCategory(category)}
+                className="animate__animated animate__fadeInUp animate__faster"
               />
             ))}
           </ul>
+        </div>
+
+        {/* Show more / less dugme */}
+        <div className="mt-12 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setShowAll((prev) => !prev)}
+            className="inline-flex items-center rounded-md border border-primary px-10 py-3 text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.35em] text-primary hover:bg-primary hover:text-white transition-all duration-300 animate__animated animate__fadeInUp"
+          >
+            {showAll ? "PRIKAŽI MANJE" : "PRIKAŽI VIŠE"}
+          </button>
         </div>
       </div>
 

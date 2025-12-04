@@ -22,7 +22,7 @@ export default function App() {
         <About />
         <Portfolio />
         {/* <Progress /> */}
-        <Talk />
+        <Talk />  
         <News />
         <Contact />
       </main>

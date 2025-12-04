@@ -17,6 +17,24 @@ export const portfolioCategories = [
         description: "Emotivne priče zabeležene kroz dan venčanja.",
         coverImage: "/img/portfolio/3.jpg",
     },
+    {
+        id: "partys",
+        title: "Žurke",
+        description: "Emotivne priče zabeležene kroz dan venčanja.",
+        coverImage: "/img/portfolio/3.jpg",
+    },
+    {
+        id: "luna",
+        title: "Luna",
+        description: "Emotivne priče zabeležene kroz dan venčanja.",
+        coverImage: "/img/portfolio/3.jpg",
+    },
+    {
+        id: "ai",
+        title: "AI",
+        description: "Emotivne priče zabeležene kroz dan venčanja.",
+        coverImage: "/img/portfolio/3.jpg",
+    },
 ];
 
 export const portfolioItems = [

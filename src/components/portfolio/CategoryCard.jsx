@@ -1,6 +1,6 @@
-export default function CategoryCard({ category, onClick }) {
+export default function CategoryCard({ category, onClick, className = "" }) {
     return (
-        <li>
+        <li className={className}>
             <button
                 type="button"
                 onClick={onClick}
