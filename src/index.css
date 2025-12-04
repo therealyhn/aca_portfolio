@@ -22,3 +22,10 @@ h6 {
 html {
   scroll-behavior: smooth;
 }
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  margin: 0 4px !important;
+}

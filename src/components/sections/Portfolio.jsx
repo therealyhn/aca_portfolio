@@ -3,6 +3,7 @@ import { portfolioCategories, portfolioItems } from "../../data/portfolioData";
 import CategoryCard from "../portfolio/CategoryCard";
 import CategoryModal from "../portfolio/CategoryModal";
 import ImageGalleryModal from "../portfolio/ImageGalleryModal";
+import MobileCategorySwiper from "../portfolio/MobileCategorySwiper";
 import "animate.css";
 
 export default function Portfolio() {
@@ -15,7 +16,7 @@ export default function Portfolio() {
     ? portfolioItems.filter((item) => item.categoryId === activeCategory.id)
     : [];
 
-  // Koje kategorije su trenutno vidljive
+  // Koje kategorije prikazujemo u gridu (desktop)
   const visibleCategories = showAll
     ? portfolioCategories
     : portfolioCategories.slice(0, 3);
@@ -48,7 +49,7 @@ export default function Portfolio() {
     });
   };
 
-  // Lock scroll kada je otvoren bilo koji modal
+  // Lock scroll kad je neki modal otvoren
   useEffect(() => {
     const hasModalOpen = activeCategory !== null;
     if (!hasModalOpen) return;
@@ -70,8 +71,8 @@ export default function Portfolio() {
           </h2>
         </div>
 
-        {/* Grid kategorija */}
-        <div className="pt-6">
+        {/* DESKTOP/TABLET GRID (MD+) */}
+        <div className="hidden md:block">
           <ul className="grid gap-8 sm:gap-10 lg:gap-14 sm:grid-cols-2 lg:grid-cols-3">
             {visibleCategories.map((category) => (
               <CategoryCard
@@ -82,18 +83,21 @@ export default function Portfolio() {
               />
             ))}
           </ul>
+
+          {/* Show more / less dugme samo na md+ */}
+          <div className="mt-12 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAll((prev) => !prev)}
+              className="inline-flex items-center rounded-md border border-primary px-10 py-3 text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.35em] text-primary hover:bg-primary hover:text-white transition-all duration-300 animate__animated animate__fadeInUp"
+            >
+              {showAll ? "PRIKAŽI MANJE" : "PRIKAŽI VIŠE"}
+            </button>
+          </div>
         </div>
 
-        {/* Show more / less dugme */}
-        <div className="mt-12 flex justify-center">
-          <button
-            type="button"
-            onClick={() => setShowAll((prev) => !prev)}
-            className="inline-flex items-center rounded-md border border-primary px-10 py-3 text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.35em] text-primary hover:bg-primary hover:text-white transition-all duration-300 animate__animated animate__fadeInUp"
-          >
-            {showAll ? "PRIKAŽI MANJE" : "PRIKAŽI VIŠE"}
-          </button>
-        </div>
+        {/* MOBILE SWIPER  < MD */}
+        <MobileCategorySwiper categories={portfolioCategories} onCategoryClick={openCategory} />
       </div>
 
       {/* Modal sa radovima iz kategorije */}
