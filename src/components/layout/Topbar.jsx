@@ -27,9 +27,9 @@ export default function Topbar() {
                 {/* Logo */}
                 <a href="#home">
                     {!scrolled ? (
-                        <img src="/img/logo/logo.png" className="h-8" alt="Logo light" />
+                        <img src="/img/logo/logo.png" className="h-8" alt="Logo light" loading="lazy" />
                     ) : (
-                        <img src="/img/logo/dark.png" className="h-8" alt="Logo dark" />
+                        <img src="/img/logo/dark.png" className="h-8" alt="Logo dark" loading="lazy" />
                     )}
                 </a>
 

@@ -63,6 +63,7 @@ export default function ImageGalleryModal({
                                 src={current.image}
                                 alt={current.title}
                                 className="max-h-[60vh] w-auto object-contain"
+                                loading="lazy"
                             />
                         </div>
 

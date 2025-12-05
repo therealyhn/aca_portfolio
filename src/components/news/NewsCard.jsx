@@ -12,6 +12,7 @@ export default function NewsCard({ post, onClick }) {
                         src={post.image}
                         alt={post.title}
                         className="w-full aspect-[4/3] object-cover transform transition-transform duration-300 group-hover:scale-105 group-hover:rotate-1"
+                        loading="lazy"
                     />
                 </button>
 

@@ -36,6 +36,7 @@ export default function Mobile() {
                         src={scrolled ? "/img/logo/dark.png" : "/img/logo/logo.png"}
                         className="h-7 transition-all"
                         alt="Logo"
+                        loading="lazy"
                     />
 
                     {/* BURGER */}

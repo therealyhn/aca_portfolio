@@ -24,6 +24,7 @@ export default function NewsModal({ post, onClose }) {
                             src={post.image}
                             alt={post.title}
                             className="w-full object-cover"
+                            loading="lazy"
                         />
                     </div>
 

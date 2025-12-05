@@ -29,6 +29,7 @@ export default function Contact() {
                                     src="/img/svg/location.svg"
                                     alt="location"
                                     className="mt-1 h-5 w-5"
+                                    loading="lazy"
                                 />
                                 <p>
                                     <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block">
@@ -45,6 +46,7 @@ export default function Contact() {
                                     src="/img/svg/email.svg"
                                     alt="email"
                                     className="mt-1 h-5 w-5"
+                                    loading="lazy"
                                 />
                                 <p>
                                     <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block">
@@ -64,6 +66,7 @@ export default function Contact() {
                                     src="/img/svg/phone.svg"
                                     alt="phone"
                                     className="mt-1 h-5 w-5"
+                                    loading="lazy"
                                 />
                                 <p>
                                     <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block">
@@ -83,6 +86,7 @@ export default function Contact() {
                                     src="/img/svg/social/instagram.svg"
                                     alt="instagram"
                                     className="mt-1 h-5 w-5"
+                                    loading="lazy"
                                 />
                                 <p>
                                     <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block">

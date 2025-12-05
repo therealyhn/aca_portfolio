@@ -30,7 +30,7 @@ export default function About() {
                 {/* Slika */}
                 <div className="relative">
                     <div className={`aspect-[3/4] overflow-hidden rounded-2xl border border-border-subtle shadow-lg shadow-primary/10 ${visible ? "animate__animated animate__fadeInLeft animate__slow" : "opacity-0"}`}>
-                        <img src="/img/about/1.jpg" alt="About" className="h-full w-full object-cover" />
+                        <img src="/img/about/1.jpg" alt="About" className="h-full w-full object-cover" loading="lazy" />
                     </div>
                 </div>
 

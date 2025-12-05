@@ -11,6 +11,7 @@ export default function Footer() {
                             src="/img/logo/dark.png"
                             alt="Logo"
                             className="h-10 brightness-0 invert"
+                            loading="lazy"
                         />
                     </div>
 
