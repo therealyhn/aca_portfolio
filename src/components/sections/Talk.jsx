@@ -1,6 +1,34 @@
+import { useEffect, useState, useRef } from "react";
+import "animate.css";
+
 export default function Talk() {
+    const sectionRef = useRef(null);
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        const el = sectionRef.current;
+        if (!el) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const entry = entries[0];
+                if (entry.isIntersecting) {
+                    setVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.7 }
+        );
+
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <section className="relative py-16 md:py-20">
+        <section
+            ref={sectionRef}
+            className="relative py-16 md:py-20"
+        >
             {/* Pattern pozadina */}
             <div
                 className="pointer-events-none absolute inset-0 bg-repeat opacity-50 z-20"
@@ -12,7 +40,9 @@ export default function Talk() {
             <div className="pointer-events-none absolute inset-0 bg-black/90 z-10" />
 
             {/* CONTENT IZABD SVEGA */}
-            <div className="relative z-20 max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-6">
+            <div className={`relative z-20 max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-6 ${
+                visible ? "animate__animated animate__fadeIn animate__slow" : "opacity-0"
+            }`}>
                 {/* Tekst */}
                 <div className="md:max-w-xl">
                     <h3 className="text-2xl md:text-3xl font-semibold text-white">

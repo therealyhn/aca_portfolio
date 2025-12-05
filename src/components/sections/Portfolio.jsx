@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { portfolioCategories, portfolioItems } from "../../data/portfolioData";
 import CategoryCard from "../portfolio/CategoryCard";
 import CategoryModal from "../portfolio/CategoryModal";
@@ -10,6 +10,8 @@ export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState(null);
   const [activeImageIndex, setActiveImageIndex] = useState(null);
   const [showAll, setShowAll] = useState(false);
+  const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
 
   // Radovi za aktivnu kategoriju
   const itemsForActiveCategory = activeCategory
@@ -61,12 +63,37 @@ export default function Portfolio() {
     };
   }, [activeCategory]);
 
+
+  // animation trigger
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.7 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="portfolio" className="bg-background-soft py-20 md:py-24">
+    <section
+      id="portfolio"
+      ref={sectionRef}
+      className="bg-background-soft py-20 md:py-24"
+    >
       <div className="max-w-7xl mx-auto px-4">
         {/* Naslov */}
-        <div className="mb-12 text-center md:text-left">
-          <h2 className="inline-block text-xs sm:text-sm md:text-base tracking-[0.25em] md:tracking-[0.6em] uppercase font-semibold text-text-heading mb-2 animate__animated animate__fadeInUp">
+        <div className={`mb-12 text-center md:text-left ${visible ? "animate__animated animate__fadeInUp animate__slow" : "opacity-0"}`}>
+          <h2 className="inline-block text-xs sm:text-sm md:text-base tracking-[0.25em] md:tracking-[0.6em] uppercase font-semibold text-text-heading mb-2">
             Odabrani <span className="text-primary">Radovi</span>
           </h2>
         </div>
@@ -79,17 +106,17 @@ export default function Portfolio() {
                 key={category.id}
                 category={category}
                 onClick={() => openCategory(category)}
-                className="animate__animated animate__fadeInUp animate__faster"
+                className={`${visible ? "animate__animated animate__fadeInUp animate__faster animate__slow" : "opacity-0"}`}
               />
             ))}
           </ul>
 
           {/* Show more / less dugme samo na md+ */}
-          <div className="mt-12 flex justify-center">
+          <div className={`mt-12 flex justify-center ${visible ? "animate__animated animate__fadeInUp animate__slow" : "opacity-0"}`}>
             <button
               type="button"
               onClick={() => setShowAll((prev) => !prev)}
-              className="inline-flex items-center rounded-md border border-primary px-10 py-3 text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.35em] text-primary hover:bg-primary hover:text-white transition-all duration-300 animate__animated animate__fadeInUp"
+              className="inline-flex items-center rounded-md border border-primary px-10 py-3 text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.35em] text-primary hover:bg-primary hover:text-white transition-all duration-300"
             >
               {showAll ? "PRIKAŽI MANJE" : "PRIKAŽI VIŠE"}
             </button>
@@ -97,7 +124,9 @@ export default function Portfolio() {
         </div>
 
         {/* MOBILE SWIPER  < MD */}
-        <MobileCategorySwiper categories={portfolioCategories} onCategoryClick={openCategory} />
+        <div className={`${visible ? "animate__animated animate__fadeInUp animate__slow" : "opacity-0"}`}>
+          <MobileCategorySwiper categories={portfolioCategories} onCategoryClick={openCategory} />
+        </div>
       </div>
 
       {/* Modal sa radovima iz kategorije */}

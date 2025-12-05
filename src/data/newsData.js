@@ -59,4 +59,36 @@ export const newsPosts = [
         quote:
             "Najbolji timovi brišu liniju između dizajna i razvoja i rade kao jedan.",
     },
+    {
+        id: 3,
+        title: "Kako dizajneri i developeri mogu bolje da sarađuju",
+        author: "Nikola Petković",
+        date: "05. decembar 2021.",
+        image: "/img/news/3.jpg",
+        category: "Saradnja",
+        excerpt:
+            "Saradnja između dizajnera i developera ključ je svakog uspešnog digitalnog proizvoda.",
+        content: [
+            "Kada zajedno razmišljaju o problemu, obe strane počinju da razumeju ograničenja i mogućnosti onih drugih.",
+            "Bliska saradnja dovodi do iskustava koja su i vizuelno ubedljiva i tehnički besprekorna.",
+        ],
+        quote:
+            "Najbolji timovi brišu liniju između dizajna i razvoja i rade kao jedan.",
+    },
+    {
+        id: 3,
+        title: "Kako dizajneri i developeri mogu bolje da sarađuju",
+        author: "Nikola Petković",
+        date: "05. decembar 2021.",
+        image: "/img/news/3.jpg",
+        category: "Saradnja",
+        excerpt:
+            "Saradnja između dizajnera i developera ključ je svakog uspešnog digitalnog proizvoda.",
+        content: [
+            "Kada zajedno razmišljaju o problemu, obe strane počinju da razumeju ograničenja i mogućnosti onih drugih.",
+            "Bliska saradnja dovodi do iskustava koja su i vizuelno ubedljiva i tehnički besprekorna.",
+        ],
+        quote:
+            "Najbolji timovi brišu liniju između dizajna i razvoja i rade kao jedan.",
+    },
 ];
