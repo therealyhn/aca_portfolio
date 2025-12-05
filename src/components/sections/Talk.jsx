@@ -17,7 +17,7 @@ export default function Talk() {
                     observer.disconnect();
                 }
             },
-            { threshold: 0.7 }
+            { threshold: 0.9 }
         );
 
         observer.observe(el);
@@ -40,9 +40,8 @@ export default function Talk() {
             <div className="pointer-events-none absolute inset-0 bg-black/90 z-10" />
 
             {/* CONTENT IZABD SVEGA */}
-            <div className={`relative z-20 max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-6 ${
-                visible ? "animate__animated animate__fadeIn animate__slow" : "opacity-0"
-            }`}>
+            <div className={`relative z-20 max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-6 ${visible ? "animate__animated animate__fadeIn animate__slow" : "opacity-0"
+                }`}>
                 {/* Tekst */}
                 <div className="md:max-w-xl">
                     <h3 className="text-2xl md:text-3xl font-semibold text-white">

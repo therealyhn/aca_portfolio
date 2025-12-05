@@ -41,10 +41,10 @@ export default function NewsSwiper({ posts, onPostClick }) {
                     </SwiperSlide>
                 ))}
 
-                <button className="news-prev absolute left-0 top-1/3 -translate-y-1/2 text-6xl text-primary opacity-70 hover:opacity-100 transition z-50 pointer-events-auto">
+                <button className="hidden md:block news-prev absolute left-0 top-1/3 -translate-y-1/2 text-6xl text-primary opacity-70 hover:opacity-100 transition z-50 pointer-events-auto">
                     ‹
                 </button>
-                <button className="news-next absolute right-0 top-1/3 -translate-y-1/2 text-6xl text-primary opacity-70 hover:opacity-100 transition z-50 pointer-events-auto">
+                <button className="hidden md:block news-next absolute right-0 top-1/3 -translate-y-1/2 text-6xl text-primary opacity-70 hover:opacity-100 transition z-50 pointer-events-auto">
                     ›
                 </button>
             </Swiper>

@@ -37,12 +37,12 @@ export default function MobileCategorySwiper({ categories, onCategoryClick }) {
                 ))}
 
                 {/* Strelice */}
-                <button className="mobile-prev absolute left-2 top-[43%] -translate-y-1/2 text-4xl text-primary opacity-70 hover:opacity-100 transition z-50 pointer-events-auto">
+                {/* <button className="mobile-prev absolute left-2 top-[43%] -translate-y-1/2 text-4xl text-primary opacity-70 hover:opacity-100 transition z-50 pointer-events-auto">
                     ‹
                 </button>
                 <button className="mobile-next absolute right-2  top-[43%] -translate-y-1/2 text-4xl text-primary opacity-70 hover:opacity-100 transition z-50 pointer-events-auto">
                     ›
-                </button>
+                </button> */}
             </Swiper>
         </div>
     );
