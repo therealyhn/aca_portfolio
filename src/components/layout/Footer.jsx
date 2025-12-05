@@ -77,7 +77,7 @@ export default function Footer() {
                 {/* Potpis */}
                 <p className="text-center text-xs text-gray-500">
                     Dizajnirano &amp; razvijeno od strane{" "}
-                    <span className="text-primary font-semibold">Jovan Ljušić</span>
+                    <a href="https://jovanljusic.com/" target="_blank" className="text-primary font-semibold hover:underline">Jovan Ljušić</a>
                 </p>
             </div>
         </footer>
