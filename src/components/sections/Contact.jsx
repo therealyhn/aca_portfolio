@@ -24,79 +24,90 @@ export default function Contact() {
                         </p>
 
                         <ul className="space-y-6 text-sm md:text-[15px]">
-                            <li className="flex items-start gap-4">
-                                <img
-                                    src="/img/svg/location.svg"
-                                    alt="location"
-                                    className="mt-1 h-5 w-5"
-                                    loading="lazy"
-                                />
+                            <li className="flex items-start gap-4 group cursor-pointer transition-all">
+                                <span className="inline-flex items-center transition-transform duration-300 group-hover:scale-125 group-hover:-rotate-6">
+                                    <img
+                                        src="/img/svg/location.svg"
+                                        alt="location"
+                                        className="mt-1 h-5 w-5"
+                                        loading="lazy"
+                                    />
+                                </span>
                                 <p>
-                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block">
+                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block group-hover:text-primary transition-colors duration-300">
                                         Adresa:
                                     </span>
-                                    <span className="text-text-base">
+                                    <span className="text-text-base group-hover:text-primary transition-colors duration-300">
                                         Kralja Petra 123, Požarevac
                                     </span>
                                 </p>
                             </li>
 
-                            <li className="flex items-start gap-4">
-                                <img
-                                    src="/img/svg/email.svg"
-                                    alt="email"
-                                    className="mt-1 h-5 w-5"
-                                    loading="lazy"
-                                />
+                            <li className="flex items-start gap-4 group cursor-pointer transition-all">
+                                <span className="inline-flex items-center transition-transform duration-300 group-hover:scale-125 group-hover:rotate-6">
+                                    <img
+                                        src="/img/svg/email.svg"
+                                        alt="email"
+                                        className="mt-1 h-5 w-5"
+                                        loading="lazy"
+                                    />
+                                </span>
                                 <p>
-                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block">
+                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block group-hover:text-primary transition-colors duration-300">
                                         Email:
                                     </span>
                                     <a
                                         href="mailto:example@gmail.com"
-                                        className="text-text-base inline-block hover:text-primary transition-colors"
+                                        className="text-text-base inline-block hover:text-primary group-hover:text-primary transition-colors duration-300 relative"
                                     >
-                                        kontakt@ajcreative.com
+                                        <span className="relative z-10">kontakt@ajcreative.com</span>
+                                        <span className="absolute left-0 right-0 bottom-0 h-[2px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                                     </a>
                                 </p>
                             </li>
 
-                            <li className="flex items-start gap-4">
-                                <img
-                                    src="/img/svg/phone.svg"
-                                    alt="phone"
-                                    className="mt-1 h-5 w-5"
-                                    loading="lazy"
-                                />
+                            <li className="flex items-start gap-4 group cursor-pointer transition-all">
+                                <span className="inline-flex items-center transition-transform duration-300 group-hover:scale-125 group-hover:rotate-6">
+                                    <img
+                                        src="/img/svg/phone.svg"
+                                        alt="phone"
+                                        className="mt-1 h-5 w-5"
+                                        loading="lazy"
+                                    />
+                                </span>
                                 <p>
-                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block">
+                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block group-hover:text-primary transition-colors duration-300">
                                         Telefon:
                                     </span>
                                     <a
                                         href="tel:+770334425557"
-                                        className="text-text-base inline-block hover:text-primary transition-colors"
+                                        className="text-text-base inline-block hover:text-primary group-hover:text-primary transition-colors duration-300 relative"
                                     >
-                                        +381 061 123 456
+                                        <span className="relative z-10">+381 061 123 456</span>
+                                        <span className="absolute left-0 right-0 bottom-0 h-[2px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                                     </a>
                                 </p>
                             </li>
 
-                            <li className="flex items-start gap-4">
-                                <img
-                                    src="/img/svg/social/instagram.svg"
-                                    alt="instagram"
-                                    className="mt-1 h-5 w-5"
-                                    loading="lazy"
-                                />
+                            <li className="flex items-start gap-4 group cursor-pointer transition-all">
+                                <span className="inline-flex items-center transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12">
+                                    <img
+                                        src="/img/svg/social/instagram.svg"
+                                        alt="instagram"
+                                        className="mt-1 h-5 w-5"
+                                        loading="lazy"
+                                    />
+                                </span>
                                 <p>
-                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block">
+                                    <span className="font-semibold font-[Poppins] text-text-heading min-w-[120px] inline-block group-hover:text-primary transition-colors duration-300">
                                         Instagram:
                                     </span>
                                     <a
                                         href="#"
-                                        className="text-text-base inline-block hover:text-primary transition-colors"
+                                        className="text-text-base inline-block hover:text-primary group-hover:text-primary transition-colors duration-300 relative"
                                     >
-                                        @ajcreative
+                                        <span className="relative z-10">@ajcreative</span>
+                                        <span className="absolute left-0 right-0 bottom-0 h-[2px] bg-gradient-to-r from-primary to-pink-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                                     </a>
                                 </p>
                             </li>
@@ -135,7 +146,7 @@ export default function Contact() {
                                 className="w-full h-11 md:h-12 rounded-md border border-border-subtle bg-white px-4 text-sm text-text-base outline-none transition-colors focus:border-primary"
                             />
 
-                            {/* Phone (novo polje) */}
+                            {/* Phone */}
                             <input
                                 type="tel"
                                 name="phone"
@@ -147,7 +158,7 @@ export default function Contact() {
                             <textarea
                                 name="message"
                                 rows="5"
-                                placeholder="Poruka..."
+                                placeholder="Poruka"
                                 required
                                 className="w-full rounded-md border border-border-subtle bg-white px-4 py-3 text-sm text-text-base outline-none transition-colors resize-none focus:border-primary"
                             />

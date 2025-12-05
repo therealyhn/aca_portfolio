@@ -65,16 +65,56 @@ export default function NewsModal({ post, onClose }) {
                             <span className="font-semibold text-text-heading">Share:</span>
                             <ul className="flex items-center gap-3">
                                 <li>
-                                    <img src="/img/svg/social/facebook.svg" className="w-4 h-4" />
+                                    <button
+                                        type="button"
+                                        className="group transition-transform transform hover:scale-110 focus:outline-none"
+                                        title="Share on Facebook"
+                                    >
+                                        <img
+                                            src="/img/svg/social/facebook.svg"
+                                            className="w-4 h-4 group-hover:scale-125 group-hover:rotate-6 transition-transform duration-200"
+                                            alt="Share on Facebook"
+                                        />
+                                    </button>
                                 </li>
                                 <li>
-                                    <img src="/img/svg/social/instagram.svg" className="w-4 h-4" />
+                                    <button
+                                        type="button"
+                                        className="group transition-transform transform hover:scale-110 focus:outline-none"
+                                        title="Share on Instagram"
+                                    >
+                                        <img
+                                            src="/img/svg/social/instagram.svg"
+                                            className="w-4 h-4 group-hover:scale-125 group-hover:-rotate-6 transition-transform duration-200"
+                                            alt="Share on Instagram"
+                                        />
+                                    </button>
                                 </li>
                                 <li>
-                                    <img src="/img/svg/social/tik-tok.svg" className="w-4 h-4" />
+                                    <button
+                                        type="button"
+                                        className="group transition-transform transform hover:scale-110 focus:outline-none"
+                                        title="Share on TikTok"
+                                    >
+                                        <img
+                                            src="/img/svg/social/tik-tok.svg"
+                                            className="w-4 h-4 group-hover:scale-125 group-hover:rotate-6 transition-transform duration-200"
+                                            alt="Share on TikTok"
+                                        />
+                                    </button>
                                 </li>
                                 <li>
-                                    <img src="/img/svg/mail.svg" className="w-4 h-4" />
+                                    <button
+                                        type="button"
+                                        className="group transition-transform transform hover:scale-110 focus:outline-none"
+                                        title="Share via Email"
+                                    >
+                                        <img
+                                            src="/img/svg/mail.svg"
+                                            className="w-4 h-4 group-hover:scale-125 group-hover:-rotate-6 transition-transform duration-200"
+                                            alt="Share via Email"
+                                        />
+                                    </button>
                                 </li>
                             </ul>
                         </div>

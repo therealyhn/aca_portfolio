@@ -18,12 +18,44 @@ export default function Footer() {
                     {/* Centar — Social ikone */}
                     <div className="flex justify-center gap-6">
                         {["facebook", "twitter", "instagram"].map((icon) => (
-                            <a key={icon} href="#" className="group">
-                                <img
-                                    src={`/img/svg/social/${icon}.svg`}
-                                    alt={icon}
-                                    className="h-5 opacity-80 group-hover:opacity-100 transition brightness-0 invert"
-                                />
+                            <a
+                                key={icon}
+                                href="#"
+                                className="group rounded-full p-2 transition-transform transform hover:scale-125 focus:outline-none focus:ring-2 focus:ring-primary"
+                                style={{ transition: 'box-shadow 0.3s cubic-bezier(0.4,0,0.2,1)' }}
+                            >
+                                <span className="relative inline-block">
+                                    <img
+                                        src={`/img/svg/social/${icon}.svg`}
+                                        alt={icon}
+                                        className="
+                                            h-5
+                                            opacity-80
+                                            group-hover:opacity-100
+                                            brightness-0 invert
+                                            transition
+                                            duration-300
+                                            ease-in-out
+                                            group-hover:rotate-[20deg]
+                                            group-hover:scale-110
+                                            "
+                                    />
+                                    {/* animated ring on hover */}
+                                    <span
+                                        className="
+                                            absolute
+                                            -inset-2
+                                            rounded-full
+                                            pointer-events-none
+                                            opacity-0
+                                            group-hover:opacity-100
+                                            group-hover:animate-[ping_1.2s_ease]
+                                            border-2
+                                            border-primary
+                                            z-[-1]
+                                        "
+                                    ></span>
+                                </span>
                             </a>
                         ))}
                     </div>
