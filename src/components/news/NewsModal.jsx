@@ -4,7 +4,7 @@ export default function NewsModal({ post, onClose }) {
     return (
         <div className="fixed inset-0 z-[60] bg-black/80 flex items-center justify-center p-4">
             {/* OUTER CONTAINER */}
-            <div className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-lg shadow-xl overflow-hidden">
+            <div className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-sm shadow-xl overflow-hidden">
 
                 {/* Close button */}
                 <button

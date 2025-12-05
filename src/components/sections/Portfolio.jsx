@@ -116,7 +116,7 @@ export default function Portfolio() {
             <button
               type="button"
               onClick={() => setShowAll((prev) => !prev)}
-              className="inline-flex items-center rounded-md border border-primary px-10 py-3 text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.35em] text-primary hover:bg-primary hover:text-white transition-all duration-300"
+              className="inline-flex items-center rounded-sm border border-primary px-10 py-3 text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.35em] text-primary hover:bg-primary hover:text-white transition-all duration-300"
             >
               {showAll ? "PRIKAŽI MANJE" : "PRIKAŽI VIŠE"}
             </button>

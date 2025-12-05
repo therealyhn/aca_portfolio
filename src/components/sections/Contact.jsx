@@ -161,7 +161,7 @@ export default function Contact() {
                                 name="name"
                                 placeholder="Ime i Prezime"
                                 required
-                                className="w-full h-11 md:h-12 rounded-md border border-border-subtle bg-white px-4 text-sm text-text-base outline-none transition-colors focus:border-primary"
+                                className="w-full h-11 md:h-12 rounded-sm border border-border-subtle bg-white px-4 text-sm text-text-base outline-none transition-colors focus:border-primary"
                             />
 
                             {/* Email */}
@@ -170,7 +170,7 @@ export default function Contact() {
                                 name="email"
                                 placeholder="Email"
                                 required
-                                className="w-full h-11 md:h-12 rounded-md border border-border-subtle bg-white px-4 text-sm text-text-base outline-none transition-colors focus:border-primary"
+                                className="w-full h-11 md:h-12 rounded-sm border border-border-subtle bg-white px-4 text-sm text-text-base outline-none transition-colors focus:border-primary"
                             />
 
                             {/* Phone */}
@@ -178,7 +178,7 @@ export default function Contact() {
                                 type="tel"
                                 name="phone"
                                 placeholder="Telefon"
-                                className="w-full h-11 md:h-12 rounded-md border border-border-subtle bg-white px-4 text-sm text-text-base outline-none transition-colors focus:border-primary"
+                                className="w-full h-11 md:h-12 rounded-sm border border-border-subtle bg-white px-4 text-sm text-text-base outline-none transition-colors focus:border-primary"
                             />
 
                             {/* Message */}
@@ -187,13 +187,13 @@ export default function Contact() {
                                 rows="5"
                                 placeholder="Poruka"
                                 required
-                                className="w-full rounded-md border border-border-subtle bg-white px-4 py-3 text-sm text-text-base outline-none transition-colors resize-none focus:border-primary"
+                                className="w-full rounded-sm border border-border-subtle bg-white px-4 py-3 text-sm text-text-base outline-none transition-colors resize-none focus:border-primary"
                             />
 
                             {/* Button */}
                             <button
                                 type="submit"
-                                className="mt-4 inline-flex w-full justify-center rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white tracking-[0.18em] uppercase hover:opacity-90 transition-opacity"
+                                className="mt-4 inline-flex w-full justify-center rounded-sm bg-primary px-6 py-3 text-sm font-semibold text-white tracking-[0.18em] uppercase hover:opacity-90 transition-opacity"
                             >
                                 Pošalji Poruku
                             </button>

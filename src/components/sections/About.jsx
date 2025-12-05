@@ -29,7 +29,7 @@ export default function About() {
             <div className="max-w-7xl xl2:max-w-8xl xl3:max-w-[1600px] xl4:max-w-[1800px] mx-auto px-4 grid gap-10 md:grid-cols-2 items-center">
                 {/* Slika */}
                 <div className="relative">
-                    <div className={`aspect-[3/4] overflow-hidden rounded-2xl border border-border-subtle shadow-lg shadow-primary/10 ${visible ? "animate__animated animate__fadeInLeft animate__slow" : "opacity-0"}`}>
+                    <div className={`aspect-[3/4] overflow-hidden rounded-md border border-border-subtle shadow-lg shadow-primary/10 ${visible ? "animate__animated animate__fadeInLeft animate__slow" : "opacity-0"}`}>
                         <img src="/img/about/1.jpg" alt="About" className="h-full w-full object-cover" loading="lazy" />
                     </div>
                 </div>
@@ -56,7 +56,7 @@ export default function About() {
                         <a
                             href="/img/resume/resume.jpg"
                             download
-                            className="rounded-md border border-primary px-10 py-4 text-md font-medium text-white bg-primary hover:bg-white hover:text-primary transition-colors"
+                            className="rounded-sm border border-primary px-10 py-4 text-md font-medium text-white bg-primary hover:bg-white hover:text-primary transition-colors"
                         >
                             Preuzmi CV
                         </a>

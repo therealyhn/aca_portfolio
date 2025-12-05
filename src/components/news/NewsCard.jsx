@@ -6,7 +6,7 @@ export default function NewsCard({ post, onClick }) {
                 <button
                     type="button"
                     onClick={onClick}
-                    className="relative overflow-hidden rounded-lg group"
+                    className="relative overflow-hidden rounded-sm group"
                 >
                     <img
                         src={post.image}
