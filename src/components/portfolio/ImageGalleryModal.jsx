@@ -28,7 +28,7 @@ export default function ImageGalleryModal({
 
     return (
         <div
-            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 p-0 sm:p-4"
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-background-dark/60 backdrop-blur-sm p-0 sm:p-4"
             onClick={onClose}
         >
             {/* Responsive wrapper for mobile modal */}
@@ -50,9 +50,9 @@ export default function ImageGalleryModal({
                     />
 
                     {/* Gradients for visibility of controls and text */}
-                    <div className="pointer-events-none absolute inset-y-0 left-0 w-9 sm:w-[50px] bg-gradient-to-r from-black/60 via-black/15 to-transparent" />
-                    <div className="pointer-events-none absolute inset-y-0 right-0 w-9 sm:w-[50px] bg-gradient-to-l from-black/60 via-black/20 to-transparent" />
-                    <div className="pointer-events-none absolute left-0 right-0 bottom-0 h-16 sm:h-24 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    <div className="pointer-events-none absolute inset-y-0 left-0 w-9 sm:w-[50px] bg-gradient-to-r from-black/30 via-black/10 to-transparent" />
+                    <div className="pointer-events-none absolute inset-y-0 right-0 w-9 sm:w-[50px] bg-gradient-to-l from-black/30 via-black/10 to-transparent" />
+                    <div className="pointer-events-none absolute left-0 right-0 bottom-0 h-16 sm:h-24 bg-gradient-to-t from-black/30 via-black/10 to-transparent" />
 
                     {/* Close button: top right on all sizes, but with more spacing on small */}
                     <button
@@ -72,7 +72,7 @@ export default function ImageGalleryModal({
                                 type="button"
                                 onClick={onPrev}
                                 className="hidden md:flex absolute left-1 md:left-0 top-[45%] -translate-y-1/2 z-30 w-12 h-12 md:w-14 md:h-14 items-center 
-                                justify-center text-white hover:text-primary text-3xl md:text-6xl transition active:scale-95 duration-300"
+                                justify-center text-white text-3xl md:text-6xl transition active:scale-95 duration-300"
                                 aria-label="Prethodna slika"
                             >
                                 ‹
@@ -81,7 +81,7 @@ export default function ImageGalleryModal({
                                 type="button"
                                 onClick={onNext}
                                 className="hidden md:flex absolute right-1 md:right-0 top-[45%] -translate-y-1/2 z-30 w-12 h-12 md:w-14 md:h-14 items-center 
-                                justify-center text-white hover:text-primary text-3xl md:text-6xl transition active:scale-95 duration-300"
+                                justify-center text-white text-3xl md:text-6xl transition active:scale-95 duration-300"
                                 aria-label="Sledeća slika"
                             >
                                 ›

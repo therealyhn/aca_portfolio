@@ -29,3 +29,30 @@ html {
   border-radius: 9999px;
   margin: 0 4px !important;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+  background: #f2f2f2; /* background-soft */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e54b4b; /* primary */
+  border-radius: 6px;
+  border: 2px solid #f2f2f2; /* background-soft */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b83a3a; /* darker variant of primary */
+}
+
+::-webkit-scrollbar-corner {
+  background: #f2f2f2;
+}
+
+/* Firefox (scrollbar-color and scrollbar-width) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #e54b4b #f2f2f2; /* thumb and track */
+}
