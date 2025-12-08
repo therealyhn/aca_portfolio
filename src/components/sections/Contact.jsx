@@ -193,7 +193,8 @@ export default function Contact() {
                             {/* Button */}
                             <button
                                 type="submit"
-                                className="mt-4 inline-flex w-full justify-center rounded-sm bg-primary px-6 py-3 text-sm font-semibold text-white tracking-[0.18em] uppercase hover:opacity-90 transition-opacity"
+                                className="mt-4 inline-flex w-full justify-center rounded-sm border border-primary bg-primary px-6 py-3 text-sm font-semibold
+                                 text-white hover:text-primary tracking-[0.18em] uppercase hover:bg-white transition duration-300"
                             >
                                 Pošalji Poruku
                             </button>

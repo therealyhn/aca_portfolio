@@ -26,16 +26,25 @@ export default function About() {
 
     return (
         <section id="about" ref={sectionRef} className="py-20">
-            <div className="max-w-7xl xl2:max-w-8xl xl3:max-w-[1600px] xl4:max-w-[1800px] mx-auto px-4 grid gap-10 md:grid-cols-2 items-center">
+            <div className="max-w-7xl xl2:max-w-8xl xl3:max-w-[1600px] xl4:max-w-[1800px] mx-auto px-4 grid gap-2 md:grid-cols-2 items-center">
                 {/* Slika */}
-                <div className="relative">
-                    <div className={`aspect-[3/4] overflow-hidden rounded-md border border-border-subtle shadow-lg shadow-primary/10 ${visible ? "animate__animated animate__fadeInLeft animate__slow" : "opacity-0"}`}>
-                        <img src="/img/about/1.jpg" alt="About" className="h-full w-full object-cover" loading="lazy" />
+                <div className="relative flex justify-center">
+                    <div
+                        className={`aspect-[3/4] overflow-hidden rounded-md border border-border-subtle shadow-lg shadow-primary/10
+                        ${visible ? "animate__animated animate__fadeInLeft animate__slow" : "opacity-0"}
+                        w-60 md:w-80 lg:w-96`}
+                    >
+                        <img
+                            src="/img/about/1.jpg"
+                            alt="About"
+                            className="h-full w-full object-cover"
+                            loading="lazy"
+                        />
                     </div>
                 </div>
 
                 {/* Tekst */}
-                <div className={`${visible ? "animate__animated animate__fadeIn animate__slow" : "opacity-0"} px-0 py-1 md:p-14 md:text-start text-center`}>
+                <div className={`${visible ? "animate__animated animate__fadeIn animate__slow" : "opacity-0"} px-0 py-1 md:p-10 md:text-start text-center`}>
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-heading">
                         O <span className="text-primary">Meni</span>
                     </h2>
@@ -61,7 +70,6 @@ export default function About() {
                             Preuzmi CV
                         </a>
                     </div>
-
                 </div>
             </div>
         </section>
