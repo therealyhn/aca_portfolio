@@ -49,7 +49,7 @@ export const portfolioItems = [
         id: 2,
         categoryId: "sports",
         title: "Fudbalski trening",
-        image: "/img/portfolio/4.jpg",
+        image: "/img/slider/2.jpg",
     },
     {
         id: 3,
