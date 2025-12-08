@@ -52,31 +52,47 @@ export default function CategoryModal({
                             Ne postoje slike u ovoj kategoriji.
                         </p>
                     ) : (
-                        <ul className="grid gap-4 sm:gap-7 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                        <ul className="grid gap-5 sm:gap-9 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                             {items.map((item, index) => (
                                 <li key={item.id ?? index}>
                                     <button
                                         type="button"
                                         onClick={() => onItemClick(index)}
-                                        className="group block w-full text-left rounded-sm border-2 border-border-soft overflow-hidden bg-background-soft/80 shadow-[0_2px_10px_rgba(50,50,50,0.07)] 
-                                        transition-all hover:border-primary focus:border-primary hover:shadow-xl hover:scale-110 active:scale-100 duration-150"
+                                        className="group block w-full text-left rounded-2xl border border-border-soft overflow-hidden bg-background-soft shadow-none
+                                        transition-all hover:border-primary focus:border-primary hover:shadow-2xl hover:scale-[1.045] active:scale-100 duration-200 backdrop-blur-[2.5px]"
                                         tabIndex={0}
                                     >
                                         <div className="aspect-[4/5] overflow-hidden relative group">
                                             <img
                                                 src={item.image}
                                                 alt={item.title}
-                                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-125 group-hover:brightness-[102%] group-hover:contrast-110"
-                                                loading="lazy" />
-                                            <div className="absolute inset-0 pointer-events-none group-hover:bg-gradient-to-t group-hover:from-primary/10 group-hover:to-transparent transition-all duration-200" />
+                                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.08] group-hover:brightness-105 group-hover:contrast-125"
+                                                loading="lazy"
+                                                style={{
+                                                    transitionTimingFunction: "cubic-bezier(.22,1,.36,1)"
+                                                }}
+                                            />
+                                            {/* Subtle overlay and accent on hover */}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none transition-all duration-200 group-hover:from-primary/10 group-hover:via-transparent group-hover:to-transparent" />
+                                            {/* Shine/frost effect (modern highlight) */}
+                                            <span className="absolute -top-8 -left-8 w-3/4 h-1/3 rotate-12 bg-white/25 opacity-0 group-hover:opacity-25 blur-xl rounded-full pointer-events-none transition-opacity duration-300" />
+                                            {/* Border accent on hover */}
+                                            <span className="absolute inset-0 rounded-sm border-2 border-primary opacity-0 group-hover:opacity-15 pointer-events-none transition-opacity duration-200" />
                                         </div>
 
-                                        <div className="px-4 pt-3 pb-4 bg-background">
-                                            <p className="text-base font-semibold text-theme-black tracking-tight truncate group-hover:text-primary transition-colors duration-150 leading-tight">
-                                                {item.title}
-                                            </p>
+                                        <div className="px-4 pt-3 pb-4 bg-background/70 backdrop-blur-sm border-t border-border-soft">
+                                            <div className="relative">
+                                                <span className="absolute right-0 bottom-0 h-1 w-2/5 bg-primary/60 rounded-lg group-hover:bg-primary/20 transition-all duration-200" />
+                                                <p className="text-base font-semibold text-theme-black tracking-tight truncate group-hover:text-primary 
+                                                    transition-colors duration-200 
+                                                    leading-tight
+                                                    relative md:pl-4 pb-2"
+                                                >
+                                                    {item.title}
+                                                </p>
+                                            </div>
                                             {item.subtitle && (
-                                                <p className="text-xs text-text-base/70 truncate mt-1 group-hover:opacity-80">
+                                                <p className="text-xs text-text-base/70 truncate mt-1 group-hover:opacity-90 italic font-medium">
                                                     {item.subtitle}
                                                 </p>
                                             )}
