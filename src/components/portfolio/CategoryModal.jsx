@@ -1,12 +1,25 @@
+import { useEffect } from "react";
+
 export default function CategoryModal({
     category,
     items,
     onClose,
     onItemClick,
 }) {
-    if (!category) return null;
 
     const title = category.title || category.name || "Category";
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === "Escape") {
+                onClose();
+            }
+        };
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [onClose]);
+
+    if (!category) return null;
 
     return (
         <div
