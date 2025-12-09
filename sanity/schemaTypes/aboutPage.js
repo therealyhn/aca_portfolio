@@ -42,12 +42,12 @@ export default defineType({
         }),
         defineField({
             name: 'cvFile',
-            title: 'CV fajl',
+            title: 'CV FILE',
             type: 'file',
             options: {
-                accept: '.pdf,.doc,.docx',
+                accept: '.pdf,.doc,.docx,.jpeg',
             },
-            description: 'Ovaj fajl će se vezati na dugme "Preuzmi CV".',
+            description: 'Dozvoljeni tipovi fajla su .pdf, .doc, .docx i .jpeg.',
         }),
     ],
 

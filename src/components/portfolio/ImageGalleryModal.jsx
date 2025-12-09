@@ -31,10 +31,13 @@ export default function ImageGalleryModal({
             className="fixed inset-0 z-[9999] flex items-center justify-center bg-background-dark/60 backdrop-blur-sm p-0 sm:p-4"
             onClick={onClose}
         >
-            {/* Responsive wrapper for mobile modal */}
             <div
                 className="relative w-full h-full sm:inline-flex sm:h-auto sm:w-auto items-center justify-center rounded-none sm:rounded-xl overflow-hidden shadow-2xl bg-black/90"
                 onClick={(e) => e.stopPropagation()}
+                style={{
+                    boxShadow:
+                        "0 0 0 2px rgba(255,255,255,0.11), 0 0 16px 0px rgba(255,255,255, 0.16)",
+                }}
             >
                 {/* Responsive content area */}
                 <div className="relative flex items-center justify-center w-full h-full sm:w-auto sm:h-auto">
@@ -44,7 +47,6 @@ export default function ImageGalleryModal({
                         loading="lazy"
                         className="w-full h-full sm:w-auto sm:h-auto max-w-full max-h-full sm:max-w-[95vw] sm:max-h-[85vh] object-contain select-none"
                         style={{
-                            // On small screens, ensure image does not overflow, but fills nicely
                             objectFit: "contain"
                         }}
                     />
@@ -59,7 +61,7 @@ export default function ImageGalleryModal({
                         type="button"
                         onClick={onClose}
                         className="absolute right-2 top-2 sm:right-3 sm:top-3 z-30 w-10 h-10 flex items-center justify-center text-3xl text-white hover:text-primary 
-                        hover:scale-125 transition active:scale-95 duration-300 bg-black/60 rounded-full sm:bg-transparent"
+                        hover:scale-125 transition active:scale-95 duration-300 sm:bg-transparent"
                         aria-label="Zatvori"
                     >
                         ×
@@ -106,7 +108,7 @@ export default function ImageGalleryModal({
                         <button
                             type="button"
                             onClick={onPrev}
-                            className="w-10 h-10 flex items-center justify-center rounded-full bg-black/90 hover:bg-primary/80 text-white text-2xl shadow-md transition active:scale-95"
+                            className="w-10 h-10 flex items-center justify-center bg-black/90 text-white text-2xl shadow-md transition active:scale-95"
                             aria-label="Prethodna slika"
                         >
                             ‹
@@ -114,7 +116,7 @@ export default function ImageGalleryModal({
                         <button
                             type="button"
                             onClick={onNext}
-                            className="w-10 h-10 flex items-center justify-center rounded-full bg-black/90 hover:bg-primary/80 text-white text-2xl shadow-md transition active:scale-95"
+                            className="w-10 h-10 flex items-center justify-center bg-black/90 text-white text-2xl shadow-md transition active:scale-95"
                             aria-label="Sledeća slika"
                         >
                             ›

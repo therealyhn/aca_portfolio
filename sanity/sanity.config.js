@@ -34,30 +34,16 @@ export default defineConfig({
 
             S.divider(),
 
-            // 🖼️ PORTFOLIO 
-            // S.listItem()
-            //   .title('Portfolio')
-            //   .child(
-            //     S.list()
-            //       .title('Portfolio')
-            //       .items([
-            //         S.listItem()
-            //           .title('Kategorije')
-            //           .child(
-            //             S.documentTypeList('portfolioCategory')
-            //               .title('Portfolio kategorije')
-            //           ),
-            //         S.listItem()
-            //           .title('Radovi (slike)')
-            //           .child(
-            //             S.documentTypeList('portfolioItem')
-            //               .title('Portfolio radovi')
-            //           ),
-            //       ])
-            //   ),
+            // PORTFOLIO 
+            S.listItem()
+              .title('Portfolio')
+              .child(
+                S.documentTypeList('portfolioCategory')
+                  .title('Portfolio kategorije')
+              ),
             S.divider(),
 
-            // 📝 BLOG / NEWS
+            //  BLOG / NEWS
             // S.listItem()
             //   .title('Blog / News')
             //   .child(
