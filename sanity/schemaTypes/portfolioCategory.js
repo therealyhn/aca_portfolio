@@ -13,12 +13,6 @@ export default defineType({
             validation: (Rule) => Rule.required(),
         }),
         defineField({
-            name: 'subtitle',
-            title: 'Kratak podnaslov (opciono)',
-            type: 'string',
-            description: 'Npr. Sportska fotografija, Modna fotografija…',
-        }),
-        defineField({
             name: 'description',
             title: 'Opis kategorije',
             type: 'text',
@@ -55,17 +49,6 @@ export default defineType({
                             title: 'Naslov rada',
                             type: 'string',
                             validation: (Rule) => Rule.required(),
-                        },
-                        {
-                            name: 'subtitle',
-                            title: 'Podnaslov / kratki opis (opciono)',
-                            type: 'string',
-                        },
-                        {
-                            name: 'description',
-                            title: 'Detaljniji opis (opciono)',
-                            type: 'text',
-                            rows: 3,
                         },
                         {
                             name: 'image',

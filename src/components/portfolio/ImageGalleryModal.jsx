@@ -64,7 +64,14 @@ export default function ImageGalleryModal({
                         hover:scale-125 transition active:scale-95 duration-300 sm:bg-transparent"
                         aria-label="Zatvori"
                     >
-                        ×
+                        <span
+                            className="drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
+                            style={{
+                                textShadow: "0 0 10px rgba(0,0,0,0.53), 0 3px 16px rgba(0,0,0,0.60)"
+                            }}
+                        >
+                            x
+                        </span>
                     </button>
 
                     {/* Desktop arrows – sa strane slike */}
@@ -73,20 +80,34 @@ export default function ImageGalleryModal({
                             <button
                                 type="button"
                                 onClick={onPrev}
-                                className="hidden md:flex absolute left-1 md:left-0 top-[45%] -translate-y-1/2 z-30 w-12 h-12 md:w-14 md:h-14 items-center 
+                                className="hidden md:flex absolute left-1 md:left-0 top-[50%] -translate-y-1/2 z-30 w-12 h-12 md:w-14 md:h-14 items-center 
                                 justify-center text-white text-3xl md:text-6xl transition active:scale-95 duration-300"
                                 aria-label="Prethodna slika"
                             >
-                                ‹
+                                <span
+                                    className="drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
+                                    style={{
+                                        textShadow: "0 0 10px rgba(0,0,0,0.53), 0 3px 16px rgba(0,0,0,0.60)"
+                                    }}
+                                >
+                                    ‹
+                                </span>
                             </button>
                             <button
                                 type="button"
                                 onClick={onNext}
-                                className="hidden md:flex absolute right-1 md:right-0 top-[45%] -translate-y-1/2 z-30 w-12 h-12 md:w-14 md:h-14 items-center 
+                                className="hidden md:flex absolute right-1 md:right-0 top-[50%] -translate-y-1/2 z-30 w-12 h-12 md:w-14 md:h-14 items-center 
                                 justify-center text-white text-3xl md:text-6xl transition active:scale-95 duration-300"
                                 aria-label="Sledeća slika"
                             >
-                                ›
+                                <span
+                                    className="drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
+                                    style={{
+                                        textShadow: "0 0 10px rgba(0,0,0,0.53), 0 3px 16px rgba(0,0,0,0.60)"
+                                    }}
+                                >
+                                    ›
+                                </span>
                             </button>
                         </>
                     )}
