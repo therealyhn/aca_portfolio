@@ -60,7 +60,7 @@ export const newsPosts = [
             "Najbolji timovi brišu liniju između dizajna i razvoja i rade kao jedan.",
     },
     {
-        id: 3,
+        id: 4,
         title: "Kako dizajneri i developeri mogu bolje da sarađuju",
         author: "Nikola Petković",
         date: "05. decembar 2021.",
@@ -76,7 +76,7 @@ export const newsPosts = [
             "Najbolji timovi brišu liniju između dizajna i razvoja i rade kao jedan.",
     },
     {
-        id: 3,
+        id: 5,
         title: "Kako dizajneri i developeri mogu bolje da sarađuju",
         author: "Nikola Petković",
         date: "05. decembar 2021.",

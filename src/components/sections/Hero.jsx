@@ -1,27 +1,36 @@
+import { useEffect, useState } from "react";
+import { sanityClient, urlFor } from "../../lib/sanityClient";
+import "animate.css";
+
 export default function Hero() {
+    const [heroData, setHeroData] = useState(null);
+
+    useEffect(() => {
+        sanityClient
+            .fetch(`*[_type == "hero"][0]`)
+            .then((data) => setHeroData(data))
+            .catch((err) => console.error(err));
+    }, []);
+
+
+    // Pozadinska slika: CMS → fallback → prazno
+    const bgImage =
+        heroData?.backgroundImage
+            ? urlFor(heroData.backgroundImage).url()
+            : "/img/slider/2.jpg";
+
     return (
         <section
             id="home"
             className="relative min-h-screen flex items-center md:pl-[20%] overflow-hidden pt-24"
         >
-            {/* Background image */}
+            {/* Background image from Sanity */}
             <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: "url('/img/slider/2.jpg')" }}
+                style={{ backgroundImage: `url('${bgImage}')` }}
             />
 
-            {/* Content
-            <div className="relative z-10 max-w-6xl px-4 md:text-left text-center">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-extrabold tracking-tight mb-4">
-                    Aleksandar <span className="text-white">Jovanovic</span>
-                </h1>
-
-                <p className="text-lg md:text-xl text-text-muted">
-                    Photographer <span className="text-primary">&amp;</span> Graphic Designer
-                </p>
-            </div> */}
-
-            {/* Scroll Indicator — bottom centered */}
+            {/* Scroll Indicator */}
             <a
                 href="#about"
                 className="
@@ -33,7 +42,7 @@ export default function Hero() {
             >
                 <span className="mb-2">Scroll</span>
 
-                {/* Animated vertical line */}
+                {/* Scrolling line */}
                 <span className="relative h-16 w-px bg-white/30 overflow-hidden">
                     <span className="absolute top-0 left-0 w-full h-full bg-primary animate-scrollLine" />
                 </span>

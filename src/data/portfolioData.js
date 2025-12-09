@@ -102,13 +102,13 @@ export const portfolioItems = [
 
     // Fashion
     {
-        id: 4,
+        id: 11,
         categoryId: "fashion",
         title: "Editorial u studiju",
         image: "/img/portfolio/2.jpg",
     },
     {
-        id: 5,
+        id: 12,
         categoryId: "fashion",
         title: "Street fashion",
         image: "/img/portfolio/7.jpg",
@@ -116,13 +116,13 @@ export const portfolioItems = [
 
     // Wedding
     {
-        id: 6,
+        id: 13,
         categoryId: "wedding",
         title: "Pripreme mlade",
         image: "/img/portfolio/3.jpg",
     },
     {
-        id: 7,
+        id: 14,
         categoryId: "wedding",
         title: "Prvi ples",
         image: "/img/portfolio/5.jpg",

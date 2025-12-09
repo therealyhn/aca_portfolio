@@ -1,7 +1,7 @@
-import {defineConfig} from 'sanity'
-import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemaTypes'
+import { defineConfig } from 'sanity'
+import { structureTool } from 'sanity/structure'
+import { visionTool } from '@sanity/vision'
+import { schemaTypes } from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
@@ -10,7 +10,64 @@ export default defineConfig({
   projectId: '9f69jymo',
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool()],
+  plugins: [
+    structureTool({
+      structure: (S) =>
+        S.list()
+          .title('Sadržaj sajta')
+          .items([
+            // Pregled svih hero slika 
+            S.listItem()
+              .title('Banner sekcija')
+              .child(
+                S.documentTypeList('hero')
+                  .title('Sve Hero slike')
+              ),
+
+            // About sekcija 
+            S.listItem()
+              .title('O meni')
+              .child(
+                S.documentTypeList('aboutPage')
+                  .title('O meni')
+              ),
+
+            S.divider(),
+
+            // 🖼️ PORTFOLIO 
+            // S.listItem()
+            //   .title('Portfolio')
+            //   .child(
+            //     S.list()
+            //       .title('Portfolio')
+            //       .items([
+            //         S.listItem()
+            //           .title('Kategorije')
+            //           .child(
+            //             S.documentTypeList('portfolioCategory')
+            //               .title('Portfolio kategorije')
+            //           ),
+            //         S.listItem()
+            //           .title('Radovi (slike)')
+            //           .child(
+            //             S.documentTypeList('portfolioItem')
+            //               .title('Portfolio radovi')
+            //           ),
+            //       ])
+            //   ),
+            S.divider(),
+
+            // 📝 BLOG / NEWS
+            // S.listItem()
+            //   .title('Blog / News')
+            //   .child(
+            //     S.documentTypeList('newsPost').title('Objave')
+            //   ),
+          ]),
+    }),
+
+    visionTool(),
+  ],
 
   schema: {
     types: schemaTypes,

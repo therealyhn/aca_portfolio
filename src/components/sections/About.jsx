@@ -30,9 +30,7 @@ export default function About() {
                 {/* Slika */}
                 <div className="relative flex justify-center">
                     <div
-                        className={`aspect-[3/4] overflow-hidden rounded-md border border-border-subtle shadow-lg shadow-primary/10
-                        ${visible ? "animate__animated animate__fadeInLeft animate__slow" : "opacity-0"}
-                        w-60 md:w-80 lg:w-96`}
+                        className="aspect-[3/4] overflow-hidden rounded-md border border-border-subtle shadow-lg shadow-primary/10 w-60 md:w-80 lg:w-96"
                     >
                         <img
                             src="/img/about/1.jpg"
