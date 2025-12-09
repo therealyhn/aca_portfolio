@@ -2,26 +2,28 @@ import { defineType, defineField } from 'sanity'
 
 export default defineType({
     name: 'aboutPage',
-    title: 'About Page (O meni)',
+    title: 'ABOUT PAGE',
     type: 'document',
+    description: 'O meni',
     fields: [
         defineField({
             name: 'image',
-            title: 'Profilna slika',
+            title: 'PROFILNA SLIKA',
             type: 'image',
             options: { hotspot: true },
+            description: 'Bilo koja rezolucija',
             validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'heading',
-            title: 'Naslov',
+            title: 'NASLOV',
             type: 'string',
             description: 'Npr. "O meni"',
             validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'intro',
-            title: 'Glavni tekst',
+            title: 'GLAVNI TEKST',
             type: 'text',
             rows: 6,
             description: 'Tekst pored slike',
@@ -29,8 +31,9 @@ export default defineType({
         }),
         defineField({
             name: 'bullets',
-            title: 'Lista (4 stavke)',
+            title: 'LISTA',
             type: 'array',
+            description: '4 stavke',
             of: [{ type: 'string' }],
             validation: (Rule) =>
                 Rule.min(1)

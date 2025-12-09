@@ -5,7 +5,7 @@ import { schemaTypes } from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'Aleksandar Jovanovic Photography',
+  title: 'AJCREATIVE | Portfolio',
 
   projectId: '9f69jymo',
   dataset: 'production',

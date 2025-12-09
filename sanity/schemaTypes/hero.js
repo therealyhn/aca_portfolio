@@ -7,11 +7,12 @@ export default defineType({
     fields: [
         defineField({
             name: 'backgroundImage',
-            title: 'Baner (Pozadinska slika)',
+            title: 'Baner slika',
             type: 'image',
             options: {
                 hotspot: true,
             },
+            description: '1920x1080px',
             validation: (Rule) => Rule.required(),
         }),
         defineField({
