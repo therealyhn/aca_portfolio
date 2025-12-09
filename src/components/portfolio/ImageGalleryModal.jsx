@@ -26,6 +26,13 @@ export default function ImageGalleryModal({
 
     const current = items[activeIndex];
 
+    // X & <>
+    const iconStyle = {
+        color: "#fff", 
+        textShadow:
+            "0 2px 2px rgba(0,0,0,0.65), 0 1px 1px rgba(0,0,0,0.60)",
+    };
+
     return (
         <div
             className="fixed inset-0 z-[9999] flex items-center justify-center bg-background-dark/60 backdrop-blur-sm p-0 sm:p-4"
@@ -52,11 +59,11 @@ export default function ImageGalleryModal({
                     />
 
                     {/* Gradients for visibility of controls and text */}
-                    <div className="pointer-events-none absolute inset-y-0 left-0 w-9 sm:w-[50px] bg-gradient-to-r from-black/30 via-black/10 to-transparent" />
-                    <div className="pointer-events-none absolute inset-y-0 right-0 w-9 sm:w-[50px] bg-gradient-to-l from-black/30 via-black/10 to-transparent" />
-                    <div className="pointer-events-none absolute left-0 right-0 bottom-0 h-16 sm:h-24 bg-gradient-to-t from-black/30 via-black/10 to-transparent" />
+                    {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-9 sm:w-[50px] bg-gradient-to-r from-black/60 via-black/30 to-transparent" /> */}
+                    {/* <div className="pointer-events-none absolute inset-y-0 right-0 w-9 sm:w-[50px] bg-gradient-to-l from-black/60 via-black/30 to-transparent" /> */}
+                    <div className="pointer-events-none absolute left-0 right-0 bottom-0 h-16 sm:h-24 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
 
-                    {/* Close button: top right on all sizes, but with more spacing on small */}
+                    {/* Close button*/}
                     <button
                         type="button"
                         onClick={onClose}
@@ -64,12 +71,7 @@ export default function ImageGalleryModal({
                         hover:scale-125 transition active:scale-95 duration-300 sm:bg-transparent"
                         aria-label="Zatvori"
                     >
-                        <span
-                            className="drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
-                            style={{
-                                textShadow: "0 0 10px rgba(0,0,0,0.53), 0 3px 16px rgba(0,0,0,0.60)"
-                            }}
-                        >
+                        <span style={iconStyle}>
                             x
                         </span>
                     </button>
@@ -84,12 +86,7 @@ export default function ImageGalleryModal({
                                 justify-center text-white text-3xl md:text-6xl transition active:scale-95 duration-300"
                                 aria-label="Prethodna slika"
                             >
-                                <span
-                                    className="drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
-                                    style={{
-                                        textShadow: "0 0 10px rgba(0,0,0,0.53), 0 3px 16px rgba(0,0,0,0.60)"
-                                    }}
-                                >
+                                <span style={iconStyle}>
                                     ‹
                                 </span>
                             </button>
@@ -100,12 +97,7 @@ export default function ImageGalleryModal({
                                 justify-center text-white text-3xl md:text-6xl transition active:scale-95 duration-300"
                                 aria-label="Sledeća slika"
                             >
-                                <span
-                                    className="drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
-                                    style={{
-                                        textShadow: "0 0 10px rgba(0,0,0,0.53), 0 3px 16px rgba(0,0,0,0.60)"
-                                    }}
-                                >
+                                <span style={iconStyle}>
                                     ›
                                 </span>
                             </button>
@@ -132,7 +124,9 @@ export default function ImageGalleryModal({
                             className="w-10 h-10 flex items-center justify-center bg-black/90 text-white text-2xl shadow-md transition active:scale-95"
                             aria-label="Prethodna slika"
                         >
-                            ‹
+                            <span style={iconStyle}>
+                                ‹
+                            </span>
                         </button>
                         <button
                             type="button"
@@ -140,7 +134,9 @@ export default function ImageGalleryModal({
                             className="w-10 h-10 flex items-center justify-center bg-black/90 text-white text-2xl shadow-md transition active:scale-95"
                             aria-label="Sledeća slika"
                         >
-                            ›
+                            <span style={iconStyle}>
+                                ›
+                            </span>
                         </button>
                     </div>
                 )}
