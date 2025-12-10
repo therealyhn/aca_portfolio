@@ -1,3 +1,4 @@
+// src/components/portfolio/MobileCategorySwiper.jsx
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -6,10 +7,10 @@ import "swiper/css/pagination";
 import CategoryCard from "./CategoryCard";
 
 export default function MobileCategorySwiper({ categories, onCategoryClick }) {
+    if (!categories || categories.length === 0) return null;
+
     return (
         <div className="md:hidden mt-10 relative px-2">
-
-            {/* Swiper */}
             <Swiper
                 modules={[Navigation, Pagination]}
                 spaceBetween={24}
@@ -35,14 +36,6 @@ export default function MobileCategorySwiper({ categories, onCategoryClick }) {
                         />
                     </SwiperSlide>
                 ))}
-
-                {/* Strelice */}
-                {/* <button className="mobile-prev absolute left-2 top-[43%] -translate-y-1/2 text-4xl text-primary opacity-70 hover:opacity-100 transition z-50 pointer-events-auto">
-                    ‹
-                </button>
-                <button className="mobile-next absolute right-2  top-[43%] -translate-y-1/2 text-4xl text-primary opacity-70 hover:opacity-100 transition z-50 pointer-events-auto">
-                    ›
-                </button> */}
             </Swiper>
         </div>
     );

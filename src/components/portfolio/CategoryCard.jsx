@@ -1,4 +1,11 @@
+// src/components/portfolio/CategoryCard.jsx
+import { urlFor } from "../../lib/sanityClient";
+
 export default function CategoryCard({ category, onClick, className = "" }) {
+    const imageUrl = category.image
+        ? urlFor(category.image).width(900).height(600).fit("crop").url()
+        : "https://placehold.co/900x600?text=Kategorija";
+
     return (
         <li className={className}>
             <button
@@ -9,7 +16,7 @@ export default function CategoryCard({ category, onClick, className = "" }) {
                 {/* Slika pozadine */}
                 <div className="relative">
                     <img
-                        src={category.image}
+                        src={imageUrl}
                         alt={category.title}
                         className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:rotate-1"
                         loading="lazy"
