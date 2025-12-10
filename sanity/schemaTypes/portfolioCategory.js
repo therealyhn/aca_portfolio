@@ -20,10 +20,10 @@ export default defineType({
         }),
         defineField({
             name: 'coverImage',
-            title: 'Naslovna slika kartice',
+            title: 'Thumbnail',
             type: 'image',
             options: { hotspot: true },
-            description: 'Slika koja se prikazuje na kartici kategorije.',
+            description: 'Najbolja opcija 1920x1080 ili slicne HORIZONTALNE rezolucije',
             validation: (Rule) => Rule.required(),
         }),
         defineField({

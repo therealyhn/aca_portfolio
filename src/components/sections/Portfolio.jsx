@@ -21,7 +21,7 @@ export default function Portfolio() {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "portfolioCategory"] | order(orderRank asc){
+        `*[_type == "portfolioCategory"] | order(order asc){
           _id,
           title,
           subtitle,
