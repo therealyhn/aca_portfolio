@@ -1,6 +1,4 @@
-// src/components/portfolio/CategoryModal.jsx
 import { useEffect } from "react";
-import { urlFor } from "../../lib/sanityClient";
 
 export default function CategoryModal({
     category,
@@ -47,8 +45,24 @@ export default function CategoryModal({
                         className="absolute right-4 md:right-8 top-3.5 z-10 w-10 h-10 flex items-center justify-center text-base font-black text-primary hover:text-theme-black border border-primary hover:border-theme-black rounded-sm transition-all duration-150 bg-background/70 shadow-md active:scale-95"
                     >
                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                            <line x1="7" y1="7" x2="21" y2="21" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                            <line x1="21" y1="7" x2="7" y2="21" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                            <line
+                                x1="7"
+                                y1="7"
+                                x2="21"
+                                y2="21"
+                                stroke="currentColor"
+                                strokeWidth="2.5"
+                                strokeLinecap="round"
+                            />
+                            <line
+                                x1="21"
+                                y1="7"
+                                x2="7"
+                                y2="21"
+                                stroke="currentColor"
+                                strokeWidth="2.5"
+                                strokeLinecap="round"
+                            />
                         </svg>
                     </button>
                 </div>
@@ -62,9 +76,9 @@ export default function CategoryModal({
                     ) : (
                         <ul className="grid gap-5 sm:gap-9 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                             {items.map((item, index) => {
-                                const thumbUrl = item.image
-                                    ? urlFor(item.image).width(600).height(750).fit("crop").url()
-                                    : "https://placehold.co/600x750?text=Rad";
+                                const thumbUrl =
+                                    item.image ||
+                                    "https://placehold.co/600x750?text=Rad"; // fallback
 
                                 return (
                                     <li key={item.id ?? item._id ?? item._key ?? index}>
@@ -80,7 +94,10 @@ export default function CategoryModal({
                                                     alt={item.alt || item.title}
                                                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.08] group-hover:brightness-105 group-hover:contrast-125"
                                                     loading="lazy"
-                                                    style={{ transitionTimingFunction: "cubic-bezier(.22,1,.36,1)" }}
+                                                    style={{
+                                                        transitionTimingFunction:
+                                                            "cubic-bezier(.22,1,.36,1)",
+                                                    }}
                                                 />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none transition-all duration-200 group-hover:from-primary/10 group-hover:via-transparent group-hover:to-transparent" />
                                                 <span className="absolute -top-8 -left-8 w-3/4 h-1/3 rotate-12 bg-white/25 opacity-0 group-hover:opacity-25 blur-xl rounded-full pointer-events-none transition-opacity duration-300" />

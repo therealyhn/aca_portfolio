@@ -1,10 +1,6 @@
-// src/components/portfolio/CategoryCard.jsx
-import { urlFor } from "../../lib/sanityClient";
-
 export default function CategoryCard({ category, onClick, className = "" }) {
-    const imageUrl = category.image
-        ? urlFor(category.image).width(900).height(600).fit("crop").url()
-        : "https://placehold.co/900x600?text=Kategorija";
+    const imageUrl =
+        category.image || "https://placehold.co/900x600?text=Kategorija";
 
     return (
         <li className={className}>
@@ -21,10 +17,9 @@ export default function CategoryCard({ category, onClick, className = "" }) {
                         className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:rotate-1"
                         loading="lazy"
                     />
-                    {/* <div className="absolute inset-0 bg-black/40 transition-opacity duration-300" /> */}
                 </div>
 
-                {/* Tekst ispod slike (naslov + kratak opis) */}
+                {/* Tekst ispod slike */}
                 <div className="p-5 bg-background-soft">
                     <span className="block text-md font-bold uppercase tracking-[0.3em] text-primary mb-1">
                         Kategorija

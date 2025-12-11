@@ -1,13 +1,18 @@
-import { createClient } from '@sanity/client'
-import { createImageUrlBuilder } from '@sanity/image-url'
+// src/lib/sanityClient.js
+import { createClient } from "@sanity/client";
+import { createImageUrlBuilder } from "@sanity/image-url";
 
+const projectId = import.meta.env.VITE_SANITY_PROJECT_ID || "9f69jymo";
+const dataset = import.meta.env.VITE_SANITY_DATASET || "production";
 
 export const sanityClient = createClient({
-  projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
-  dataset: import.meta.env.VITE_SANITY_DATASET,
-  apiVersion: '2025-01-01', // možeš i neki datum iz ove godine
+  projectId,
+  dataset,
+  apiVersion: "2025-01-01",
   useCdn: true,
-})
+});
 
-const builder = createImageUrlBuilder(sanityClient)
-export const urlFor = (source) => builder.image(source)
+// novi način (nema više deprecated default export warninga)
+const builder = createImageUrlBuilder({ projectId, dataset });
+
+export const urlFor = (source) => builder.image(source);

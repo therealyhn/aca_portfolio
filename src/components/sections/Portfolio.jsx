@@ -4,10 +4,29 @@ import CategoryCard from "../portfolio/CategoryCard";
 import CategoryModal from "../portfolio/CategoryModal";
 import ImageGalleryModal from "../portfolio/ImageGalleryModal";
 import MobileCategorySwiper from "../portfolio/MobileCategorySwiper";
-import { sanityClient } from "../../lib/sanityClient";
+import { sanityClient, urlFor } from "../../lib/sanityClient";
 import "animate.css";
 
 const FALLBACK_IMAGE = "https://placehold.co/800x600?text=No+Image";
+
+const buildImageUrl = (img) => {
+  if (!img || !img.asset || (!img.asset._ref && !img.asset._id)) {
+    return FALLBACK_IMAGE;
+  }
+
+  try {
+    return urlFor(img)
+      .width(1600)
+      .fit("max")
+      .auto("format")
+      .quality(80)
+      .url();
+  } catch (e) {
+    console.error("Greška u buildImageUrl:", e, img);
+    return FALLBACK_IMAGE;
+  }
+};
+
 
 export default function Portfolio() {
   const [categories, setCategories] = useState([]);   // iz Sanity-ja
@@ -29,52 +48,43 @@ export default function Portfolio() {
           title,
           subtitle,
           description,
-          coverImage{
-            asset->{url}
-          },
-          coverImageAlt,
+          coverImage,
           works[]{
             _key,
             title,
             alt,
-            image{
-              asset->{url}
-            }
+            image
           }
         }`
       )
       .then((data) => {
-        // kategorije za kartice
         const mappedCategories = data.map((cat) => ({
           id: cat._id,
           title: cat.title,
           subtitle: cat.subtitle || "KATEGORIJA",
           description: cat.description || "",
-          image: cat.coverImage?.asset?.url || FALLBACK_IMAGE,
-          alt: cat.coverImageAlt || cat.title || "Portfolio kategorija",
+          image: buildImageUrl(cat.coverImage),          // 👈 ovde helper
           workCount: cat.works?.length || 0,
         }));
 
-        // radovi za modal/slajder
         const mappedItems = data.flatMap((cat) =>
           (cat.works || []).map((work) => ({
             id: work._key,
             categoryId: cat._id,
             title: work.title || cat.title,
-            image: work.image?.asset?.url || FALLBACK_IMAGE,
+            image: buildImageUrl(work.image),            // 👈 i ovde helper
             alt: work.alt || work.title || cat.title || "Portfolio rad",
           }))
         );
 
         setCategories(mappedCategories);
         setItems(mappedItems);
-
-        console.log("SANITY PORTFOLIO CATEGORIES:", mappedCategories);
       })
       .catch((err) => {
         console.error("Greška pri fetchovanju portfolio kategorija:", err);
       });
   }, []);
+
 
   // Radovi za aktivnu kategoriju
   const itemsForActiveCategory = activeCategory
