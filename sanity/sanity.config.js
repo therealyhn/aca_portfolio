@@ -1,3 +1,4 @@
+// sanity.config.js
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
@@ -16,42 +17,40 @@ export default defineConfig({
         S.list()
           .title('Sadržaj sajta')
           .items([
-            // Pregled svih hero slika 
+            // Hero
             S.listItem()
               .title('Banner sekcija')
-              .child(
-                S.documentTypeList('hero')
-                  .title('Sve Hero slike')
-              ),
+              .child(S.documentTypeList('hero').title('Sve Hero slike')),
 
-            // About sekcija 
+            // About
             S.listItem()
               .title('O meni')
-              .child(
-                S.documentTypeList('aboutPage')
-                  .title('O meni')
-              ),
+              .child(S.documentTypeList('aboutPage').title('O meni')),
 
             S.divider(),
 
-            // PORTFOLIO 
+            // Portfolio
             S.listItem()
               .title('Portfolio')
               .child(
-                S.documentTypeList('portfolioCategory')
-                  .title('Portfolio kategorije')
+                S.list()
+                  .title('Portfolio')
+                  .items([
+                    S.listItem()
+                      .title('Kategorije')
+                      .child(S.documentTypeList('portfolioCategory').title('Portfolio kategorije')),
+                    // Ako imaš još nešto za portfolio, ide ovde
+                  ]),
               ),
+
             S.divider(),
 
-            //  BLOG / NEWS
-            // S.listItem()
-            //   .title('Blog / News')
-            //   .child(
-            //     S.documentTypeList('newsPost').title('Objave')
-            //   ),
+            // BLOG / NEWS
+            S.listItem()
+              .title('Blog / News')
+              .child(S.documentTypeList('newsPost').title('Objave')),
           ]),
     }),
-
     visionTool(),
   ],
 
