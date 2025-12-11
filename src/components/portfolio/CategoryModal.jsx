@@ -77,7 +77,7 @@ export default function CategoryModal({
                                             <div className="aspect-[4/5] overflow-hidden relative group">
                                                 <img
                                                     src={thumbUrl}
-                                                    alt={item.title}
+                                                    alt={item.alt || item.title}
                                                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.08] group-hover:brightness-105 group-hover:contrast-125"
                                                     loading="lazy"
                                                     style={{ transitionTimingFunction: "cubic-bezier(.22,1,.36,1)" }}

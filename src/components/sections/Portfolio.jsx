@@ -1,3 +1,4 @@
+// src/sections/Portfolio.jsx
 import { useEffect, useState, useRef } from "react";
 import CategoryCard from "../portfolio/CategoryCard";
 import CategoryModal from "../portfolio/CategoryModal";
@@ -5,6 +6,8 @@ import ImageGalleryModal from "../portfolio/ImageGalleryModal";
 import MobileCategorySwiper from "../portfolio/MobileCategorySwiper";
 import { sanityClient } from "../../lib/sanityClient";
 import "animate.css";
+
+const FALLBACK_IMAGE = "https://placehold.co/800x600?text=No+Image";
 
 export default function Portfolio() {
   const [categories, setCategories] = useState([]);   // iz Sanity-ja
@@ -27,13 +30,15 @@ export default function Portfolio() {
           subtitle,
           description,
           coverImage{
-            asset->{ url }
+            asset->{url}
           },
+          coverImageAlt,
           works[]{
             _key,
             title,
+            alt,
             image{
-              asset->{ url }
+              asset->{url}
             }
           }
         }`
@@ -45,9 +50,8 @@ export default function Portfolio() {
           title: cat.title,
           subtitle: cat.subtitle || "KATEGORIJA",
           description: cat.description || "",
-          image:
-            cat.coverImage?.asset?.url ||
-            "https://placehold.co/600x400",
+          image: cat.coverImage?.asset?.url || FALLBACK_IMAGE,
+          alt: cat.coverImageAlt || cat.title || "Portfolio kategorija",
           workCount: cat.works?.length || 0,
         }));
 
@@ -57,16 +61,14 @@ export default function Portfolio() {
             id: work._key,
             categoryId: cat._id,
             title: work.title || cat.title,
-            image:
-              work.image?.asset?.url ||
-              "https://placehold.co/600x400",
+            image: work.image?.asset?.url || FALLBACK_IMAGE,
+            alt: work.alt || work.title || cat.title || "Portfolio rad",
           }))
         );
 
         setCategories(mappedCategories);
         setItems(mappedItems);
 
-        // debug
         console.log("SANITY PORTFOLIO CATEGORIES:", mappedCategories);
       })
       .catch((err) => {
@@ -74,15 +76,13 @@ export default function Portfolio() {
       });
   }, []);
 
-  //  IZBOR RADOVA PO AKTIVNOJ KATEGORIJI
+  // Radovi za aktivnu kategoriju
   const itemsForActiveCategory = activeCategory
     ? items.filter((item) => item.categoryId === activeCategory.id)
     : [];
 
-  //  KOJE KATEGORIJE PRIKAZUJEMO
-  const visibleCategories = showAll
-    ? categories
-    : categories.slice(0, 3);
+  // Koje kategorije prikazujemo
+  const visibleCategories = showAll ? categories : categories.slice(0, 3);
 
   const openCategory = (category) => {
     setActiveCategory(category);
@@ -198,7 +198,9 @@ export default function Portfolio() {
         {/* MOBILE SWIPER  < MD */}
         <div
           className={
-            visible ? "animate__animated animate__fadeInUp animate__slow md:hidden" : "opacity-0 md:hidden"
+            visible
+              ? "animate__animated animate__fadeInUp animate__slow md:hidden"
+              : "opacity-0 md:hidden"
           }
         >
           <MobileCategorySwiper

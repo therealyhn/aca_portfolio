@@ -51,7 +51,7 @@ export default function ImageGalleryModal({
                 <div className="relative flex items-center justify-center">
                     <img
                         src={current.image}
-                        alt={current.title}
+                        alt={current.alt || current.title}
                         loading="lazy"
                         className="select-none object-contain"
                         style={{

@@ -17,7 +17,7 @@ export default function CategoryCard({ category, onClick, className = "" }) {
                 <div className="relative">
                     <img
                         src={imageUrl}
-                        alt={category.title}
+                        alt={category.alt || category.title}
                         className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:rotate-1"
                         loading="lazy"
                     />
