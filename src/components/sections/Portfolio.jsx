@@ -63,7 +63,7 @@ export default function Portfolio() {
           title: cat.title,
           subtitle: cat.subtitle || "KATEGORIJA",
           description: cat.description || "",
-          image: buildImageUrl(cat.coverImage),          // 👈 ovde helper
+          image: buildImageUrl(cat.coverImage),
           workCount: cat.works?.length || 0,
         }));
 
@@ -72,7 +72,7 @@ export default function Portfolio() {
             id: work._key,
             categoryId: cat._id,
             title: work.title || cat.title,
-            image: buildImageUrl(work.image),            // 👈 i ovde helper
+            image: buildImageUrl(work.image),
             alt: work.alt || work.title || cat.title || "Portfolio rad",
           }))
         );
