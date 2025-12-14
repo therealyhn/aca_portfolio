@@ -42,7 +42,7 @@ export default defineType({
         prepare() {
             return {
                 title: "Contact",
-                subtitle: "Leva strana kontakt sekcije",
+                subtitle: "Kontakt Info",
             };
         },
     },
