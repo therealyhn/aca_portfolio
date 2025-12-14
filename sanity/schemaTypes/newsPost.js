@@ -38,6 +38,7 @@ export default defineType({
             name: 'mainImage',
             title: 'Naslovna slika',
             type: 'image',
+            description: '1200x800 najbolja rezolucija',
             options: {
                 hotspot: true,
             },
@@ -56,12 +57,12 @@ export default defineType({
             title: 'Sadržaj objave',
             type: 'array',
             of: [{ type: 'string' }],
-            description: 'Glavni tekst (može imati više paragrafa, bold itd.)',
+            description: 'Glavni tekst (Podeljen po paragrafima)',
             validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'highlightQuote',
-            title: 'Istaknuti citat (opciono)',
+            title: 'Istaknuti citat',
             type: 'string',
         }),
     ],
