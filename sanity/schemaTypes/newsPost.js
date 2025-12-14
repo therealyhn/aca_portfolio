@@ -29,19 +29,6 @@ export default defineType({
             validation: (Rule) => Rule.required(),
         }),
         defineField({
-            name: 'category',
-            title: 'Kategorija',
-            type: 'string',
-            options: {
-                list: [
-                    { title: 'Razvoj', value: 'Razvoj' },
-                    { title: 'Karijera', value: 'Karijera' },
-                    { title: 'Saradnja', value: 'Saradnja' },
-                    { title: 'Inspiration', value: 'Inspiration' },
-                ],
-            },
-        }),
-        defineField({
             name: 'author',
             title: 'Autor',
             type: 'string',
@@ -65,18 +52,10 @@ export default defineType({
             validation: (Rule) => Rule.required(),
         }),
         defineField({
-            name: 'excerpt',
-            title: 'Kratak uvod (excerpt)',
-            type: 'text',
-            rows: 3,
-            description: 'Kratak opis koji se prikazuje na kartici',
-            validation: (Rule) => Rule.required(),
-        }),
-        defineField({
             name: 'content',
             title: 'Sadržaj objave',
             type: 'array',
-            of: [{ type: 'block' }],
+            of: [{ type: 'string' }],
             description: 'Glavni tekst (može imati više paragrafa, bold itd.)',
             validation: (Rule) => Rule.required(),
         }),
@@ -84,12 +63,6 @@ export default defineType({
             name: 'highlightQuote',
             title: 'Istaknuti citat (opciono)',
             type: 'string',
-        }),
-        defineField({
-            name: 'featured',
-            title: 'Istaknuta objava',
-            type: 'boolean',
-            initialValue: false,
         }),
     ],
 
