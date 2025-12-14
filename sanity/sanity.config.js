@@ -49,7 +49,21 @@ export default defineConfig({
             S.listItem()
               .title('Blog / News')
               .child(S.documentTypeList('newsPost').title('Objave')),
+
+            S.divider(),
+
+
+            // CONTACT
+            S.listItem()
+              .title("Kontakt")
+              .child(
+                S.documentTypeList("contactPage")
+                  .title("Kontakt podaci")
+              ),
+
           ]),
+
+
     }),
     visionTool(),
   ],
