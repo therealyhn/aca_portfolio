@@ -62,7 +62,7 @@ _Ready for [Sanity CMS](https://www.sanity.io/) integration so the client can ma
 | **Animations**| Animate.css            |
 | **Carousels** | Swiper.js              |
 | **State**     | React Hooks & Custom   |
-| **CMS**       | Sanity.io (upcoming)   |
+| **CMS**       | Sanity                 |
 | **Deployment**| Hostinger + GitHub Actions |
 | **Contact**   | Web3Forms API          |
 
@@ -135,5 +135,6 @@ _Also includes:_
 
 ## 👤 Author
 
-**Jovan Ljusić** — Frontend Developer  
+**Jovan Ljusić**
+[Portfolio Website](https://jovanljusic.com)
 [GitHub: therealyhn](https://github.com/therealyhn)
