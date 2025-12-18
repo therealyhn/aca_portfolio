@@ -59,7 +59,7 @@ export default function CategoryModal({
 
                     {/* IMAGES GRID */}
                     {items.length === 0 ? (
-                        <div className="text-center text-white/50 py-10">Nema slika u ovoj kategoriji.</div>
+                        <div className="text-center text-white/50 py-10 font-body">Nema dodatnih slika za ovaj projekat.</div>
                     ) : (
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
                             {items.map((item, index) => (
