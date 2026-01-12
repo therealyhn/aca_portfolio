@@ -17,7 +17,7 @@ export default function Footer() {
 
                     {/* Centar — Social ikone */}
                     <div className="flex justify-center gap-6">
-                        {["facebook", "twitter", "instagram"].map((icon) => (
+                        {["instagram", "facebook", "linkedin"].map((icon) => (
                             <a
                                 key={icon}
                                 href="#"
