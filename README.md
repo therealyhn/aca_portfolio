@@ -3,7 +3,7 @@
 A modern, elegant, and fully responsive portfolio website built for professional photographer & graphic designer **Aleksandar Jovanović**.
 
 Developed with [React](https://react.dev/), [Vite](https://vitejs.dev/), [Tailwind CSS](https://tailwindcss.com/), [Swiper.js](https://swiperjs.com/), and [Animate.css](https://animate.style/).  
-_Ready for [Sanity CMS](https://www.sanity.io/) integration so the client can manage all content independently._
+_Integrated with [Sanity CMS](https://www.sanity.io/), so the client can manage all content independently._
 
 ---
 
