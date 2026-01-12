@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import useActiveSection from "../../hooks/useActiveSection";
+import useSiteSettings from "../../hooks/useSiteSettings";
+import { urlFor } from "../../lib/sanityClient";
 import "animate.css";
 
 const navLinks = [
@@ -13,6 +15,14 @@ const navLinks = [
 export default function Topbar() {
     const [scrolled, setScrolled] = useState(false);
     const activeSection = useActiveSection(navLinks.map((link) => link.href));
+    const { settings } = useSiteSettings();
+
+    const logoLight = settings?.navLogoLight
+        ? urlFor(settings.navLogoLight).height(64).url()
+        : "/img/logo/logo.png";
+    const logoDark = settings?.navLogoDark
+        ? urlFor(settings.navLogoDark).height(64).url()
+        : "/img/logo/dark.png";
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 80);
@@ -27,9 +37,9 @@ export default function Topbar() {
                 {/* Logo */}
                 <a href="#home">
                     {!scrolled ? (
-                        <img src="/img/logo/logo.png" className="h-8" alt="Logo light" loading="lazy" />
+                        <img src={logoLight} className="h-8" alt="Logo light" loading="lazy" />
                     ) : (
-                        <img src="/img/logo/dark.png" className="h-8" alt="Logo dark" loading="lazy" />
+                        <img src={logoDark} className="h-8" alt="Logo dark" loading="lazy" />
                     )}
                 </a>
 

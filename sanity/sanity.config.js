@@ -61,6 +61,16 @@ export default defineConfig({
                   .title("Kontakt podaci")
               ),
 
+            S.divider(),
+
+            // SITE SETTINGS
+            S.listItem()
+              .title("Site Settings")
+              .child(
+                S.documentTypeList("siteSettings")
+                  .title("Site Settings")
+              ),
+
           ]),
 
 

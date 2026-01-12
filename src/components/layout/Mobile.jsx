@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import useActiveSection from "../../hooks/useActiveSection";
+import useSiteSettings from "../../hooks/useSiteSettings";
+import { urlFor } from "../../lib/sanityClient";
 
 const navLinks = [
     { label: "Početna", href: "home" },
@@ -12,6 +14,7 @@ const navLinks = [
 export default function Mobile() {
     const [open, setOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const { settings } = useSiteSettings();
 
     const activeSection = useActiveSection(navLinks.map((link) => link.href));
 
@@ -23,6 +26,13 @@ export default function Mobile() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const logoLight = settings?.navLogoLight
+        ? urlFor(settings.navLogoLight).height(56).url()
+        : "/img/logo/logo.png";
+    const logoDark = settings?.navLogoDark
+        ? urlFor(settings.navLogoDark).height(56).url()
+        : "/img/logo/dark.png";
+
     return (
         <div className="md:hidden">
             {/* HEADER WRAPPER */}
@@ -33,7 +43,7 @@ export default function Mobile() {
                 >
                     {/* LOGO */}
                     <img
-                        src={scrolled ? "/img/logo/dark.png" : "/img/logo/logo.png"}
+                        src={scrolled ? logoDark : logoLight}
                         className="h-7 transition-all"
                         alt="Logo"
                         loading="lazy"
