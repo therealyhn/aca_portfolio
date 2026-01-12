@@ -10,21 +10,18 @@ export default defineType({
             title: "Navbar logo (light)",
             type: "image",
             options: { hotspot: true },
-            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: "navLogoDark",
             title: "Navbar logo (dark)",
             type: "image",
             options: { hotspot: true },
-            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: "footerLogo",
             title: "Footer logo",
             type: "image",
             options: { hotspot: true },
-            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: "socials",
