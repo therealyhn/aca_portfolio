@@ -56,8 +56,11 @@ export default defineType({
             name: 'content',
             title: 'Sadržaj objave',
             type: 'array',
-            of: [{ type: 'string' }],
-            description: 'Glavni tekst (Podeljen po paragrafima)',
+            of: [
+                { type: 'block' },
+                { type: 'image', options: { hotspot: true }, fields: [{ name: 'alt', title: 'Alt tekst', type: 'string' }] },
+            ],
+            description: 'Glavni tekst sa mogućim slikama između paragrafa',
             validation: (Rule) => Rule.required(),
         }),
         defineField({

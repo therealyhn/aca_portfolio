@@ -1,3 +1,46 @@
+import { urlFor } from "../../lib/sanityClient";
+
+const buildInlineImageUrl = (image) => {
+    if (!image?.asset) return null;
+
+    try {
+        return urlFor(image).width(1200).fit("max").auto("format").quality(80).url();
+    } catch (err) {
+        console.error("Inline image url error:", err);
+        return null;
+    }
+};
+
+const renderContentItem = (item, index) => {
+    if (typeof item === "string") {
+        return <p key={`p-${index}`}>{item}</p>;
+    }
+
+    if (item?._type === "block") {
+        const text = item.children?.map((child) => child.text).join("") || "";
+        if (!text) return null;
+        return <p key={`b-${item._key || index}`}>{text}</p>;
+    }
+
+    if (item?._type === "image") {
+        const src = buildInlineImageUrl(item);
+        if (!src) return null;
+
+        return (
+            <figure key={`img-${item._key || index}`} className="my-3">
+                <img
+                    src={src}
+                    alt={item.alt || ""}
+                    className="w-full rounded-md object-cover"
+                    loading="lazy"
+                />
+            </figure>
+        );
+    }
+
+    return null;
+};
+
 export default function NewsModal({ post, onClose }) {
     if (!post) return null;
 
@@ -43,9 +86,7 @@ export default function NewsModal({ post, onClose }) {
                         )}
 
                         <div className="space-y-2 text-[15px] sm:text-base leading-[1.7] text-text-base">
-                            {post.content?.map((p, i) => (
-                                <p key={i}>{p}</p>
-                            ))}
+                            {post.content?.map((item, index) => renderContentItem(item, index))}
                         </div>
 
                         {/* Share section */}
