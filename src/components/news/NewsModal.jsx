@@ -22,17 +22,6 @@ export default function NewsModal({ post, onClose }) {
                     </svg>
                 </button>
 
-                {/* Image */}
-                <div className="relative w-full max-h-52 sm:max-h-72 overflow-hidden flex-shrink-0 border-b border-border-subtle bg-neutral-100 group">
-                    <img
-                        src={post.image}
-                        alt={post.title}
-                        className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
-                        loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
-                </div>
-
                 {/* Content */}
                 <div className="flex-1 overflow-y-auto px-4 pt-5 pb-4 md:px-8 md:pt-7 md:pb-7 bg-background">
                     <div className="max-w-2xl mx-auto space-y-4 md:space-y-6">
