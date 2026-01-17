@@ -1,3 +1,4 @@
+import { useEffect, useMemo, useState } from "react";
 import { urlFor } from "../../lib/sanityClient";
 
 const buildInlineImageUrl = (image) => {
@@ -43,6 +44,56 @@ const renderContentItem = (item, index) => {
 
 export default function NewsModal({ post, onClose }) {
     if (!post) return null;
+
+    const [copied, setCopied] = useState(false);
+
+    const shareUrl = useMemo(() => {
+        if (typeof window === "undefined") return "";
+        const base = `${window.location.origin}${window.location.pathname}`;
+        return post.slug ? `${base}#news?blog=${encodeURIComponent(post.slug)}` : `${base}#news`;
+    }, [post.slug]);
+
+    useEffect(() => {
+        setCopied(false);
+    }, [shareUrl]);
+
+    const copyToClipboard = async () => {
+        if (!shareUrl) return;
+        try {
+            if (navigator.clipboard?.writeText) {
+                await navigator.clipboard.writeText(shareUrl);
+            } else {
+                const textarea = document.createElement("textarea");
+                textarea.value = shareUrl;
+                textarea.setAttribute("readonly", "");
+                textarea.style.position = "absolute";
+                textarea.style.left = "-9999px";
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textarea);
+            }
+            setCopied(true);
+            setTimeout(() => setCopied(false), 1500);
+        } catch (err) {
+            console.error("Copy link error:", err);
+        }
+    };
+
+    const handleShare = async () => {
+        if (!shareUrl) return;
+
+        if (navigator.share) {
+            try {
+                await navigator.share({ title: post.title || "Blog", url: shareUrl });
+                return;
+            } catch (err) {
+                console.error("Native share error:", err);
+            }
+        }
+
+        await copyToClipboard();
+    };
 
     return (
         <div className="fixed inset-0 z-[120] flex items-center justify-center bg-background-dark/60 backdrop-blur-sm p-1 md:p-4 transition">
@@ -92,12 +143,16 @@ export default function NewsModal({ post, onClose }) {
                         {/* Share section */}
                         <div className="pt-1 flex items-center gap-3">
                             <span className="font-semibold text-text-heading tracking-wide text-sm">Podeli:</span>
+                            {copied && (
+                                <span className="text-xs text-text-base/70">Link kopiran</span>
+                            )}
                             <ul className="flex items-center gap-1.5">
                                 <li>
                                     <button
                                         type="button"
                                         className="group w-8 h-8 rounded-full bg-white/90 hover:bg-primary/10 flex items-center justify-center shadow"
                                         title="Share on Facebook"
+                                        onClick={handleShare}
                                     >
                                         <img
                                             src="/img/svg/social/facebook.svg"
@@ -111,6 +166,7 @@ export default function NewsModal({ post, onClose }) {
                                         type="button"
                                         className="group w-8 h-8 rounded-full bg-white/90 hover:bg-primary/10 flex items-center justify-center shadow"
                                         title="Share on Instagram"
+                                        onClick={handleShare}
                                     >
                                         <img
                                             src="/img/svg/social/instagram.svg"
@@ -124,6 +180,7 @@ export default function NewsModal({ post, onClose }) {
                                         type="button"
                                         className="group w-8 h-8 rounded-full bg-white/90 hover:bg-primary/10 flex items-center justify-center shadow"
                                         title="Share on TikTok"
+                                        onClick={handleShare}
                                     >
                                         <img
                                             src="/img/svg/social/tik-tok.svg"
@@ -137,6 +194,7 @@ export default function NewsModal({ post, onClose }) {
                                         type="button"
                                         className="group w-8 h-8 rounded-full bg-white/90 hover:bg-primary/10 flex items-center justify-center shadow"
                                         title="Share via Email"
+                                        onClick={handleShare}
                                     >
                                         <img
                                             src="/img/svg/mail.svg"

@@ -32,6 +32,30 @@ export default function News() {
     const sectionRef = useRef(null);
     const [visible, setVisible] = useState(false);
 
+    const getSlugFromHash = () => {
+        if (typeof window === "undefined") return "";
+        const hash = window.location.hash || "";
+        const [path, query] = hash.split("?");
+        if (path !== "#news") return "";
+        const params = new URLSearchParams(query || "");
+        return params.get("blog") || "";
+    };
+
+    const openPost = (post) => {
+        if (!post) return;
+        setActivePost(post);
+        if (typeof window !== "undefined" && post.slug) {
+            window.location.hash = `news?blog=${encodeURIComponent(post.slug)}`;
+        }
+    };
+
+    const closePost = () => {
+        setActivePost(null);
+        if (typeof window !== "undefined") {
+            window.location.hash = "news";
+        }
+    };
+
     // FETCH iz Sanity-ja
     useEffect(() => {
         sanityClient
@@ -39,6 +63,7 @@ export default function News() {
                 `*[_type == "newsPost"] | order(publishedAt desc){
                     _id,
                     title,
+                    slug,
                     publishedAt,
                     category,
                     author,
@@ -52,12 +77,13 @@ export default function News() {
                 const mapped = data.map((post) => ({
                     id: post._id,
                     title: post.title,
+                    slug: post.slug?.current || "",
                     author: post.author || "",
                     date: formatDate(post.publishedAt),
                     image: buildNewsImageUrl(post.mainImage),
                     category: post.category || "",
                     excerpt: post.excerpt || "",
-                    // content je array od stringova u schemi
+                    // content je array blokova/slika iz Sanity-ja
                     content: post.content || [],
                     quote: post.highlightQuote || "",
                 }));
@@ -99,6 +125,35 @@ export default function News() {
         };
     }, [activePost]);
 
+    // Open post from hash when posts are loaded
+    useEffect(() => {
+        if (!posts.length) return;
+        const slug = getSlugFromHash();
+        if (!slug) return;
+        const match = posts.find((post) => post.slug === slug);
+        if (match) {
+            setActivePost(match);
+        }
+    }, [posts]);
+
+    // React to hash changes
+    useEffect(() => {
+        if (typeof window === "undefined") return;
+        const handleHashChange = () => {
+            const slug = getSlugFromHash();
+            if (!slug) {
+                setActivePost(null);
+                return;
+            }
+            const match = posts.find((post) => post.slug === slug);
+            if (match) {
+                setActivePost(match);
+            }
+        };
+        window.addEventListener("hashchange", handleHashChange);
+        return () => window.removeEventListener("hashchange", handleHashChange);
+    }, [posts]);
+
     return (
         <section
             id="news"
@@ -120,14 +175,14 @@ export default function News() {
                     </p>
                 ) : (
                     <div className={`${visible ? "animate__animated animate__fadeInUp animate__faster animate__slow" : "opacity-0"} pt-6`}>
-                        <NewsSwiper posts={posts} onPostClick={setActivePost} />
+                        <NewsSwiper posts={posts} onPostClick={openPost} />
                     </div>
                 )}
             </div>
 
             {/* Modal */}
             {activePost && (
-                <NewsModal post={activePost} onClose={() => setActivePost(null)} />
+                <NewsModal post={activePost} onClose={closePost} />
             )}
         </section>
     );
