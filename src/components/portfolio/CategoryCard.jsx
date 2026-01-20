@@ -14,7 +14,7 @@ export default function CategoryCard({ category, onClick, className = "" }) {
                     <img
                         src={imageUrl}
                         alt={category.alt || category.title}
-                        className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:rotate-1"
+                        className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:rotate-1 sm:h-56 md:h-64"
                         loading="lazy"
                     />
                 </div>
