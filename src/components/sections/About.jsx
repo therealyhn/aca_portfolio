@@ -105,13 +105,13 @@ export default function About() {
                             "Dodaj uvodni tekst u Sanity 'ABOUT PAGE' dokumentu."}
                     </p>
 
-                    <div className="flex flex-col justify-center md:items-start items-center">
+                    <div className="flex flex-col justify-center md:items-start items-start">
                         {/* Lista (bullets) */}
                         {bullets.length > 0 && (
-                            <ul className="grid grid-cols-2 md:grid-cols-2 w-full gap-3 mb-8 text-md md:text-lg italic font-bold">
+                            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 w-full gap-3 mb-8 text-md md:text-lg italic font-bold">
                                 {bullets.map((item, index) => (
-                                    <li key={index} className="flex items-center gap-2">
-                                        <span className="h-2 w-2 rounded-full bg-primary" />
+                                    <li key={index} className="flex items-start gap-2 text-start">
+                                        <span className="h-2 w-2 rounded-full bg-primary mt-2 shrink-0" />
                                         <span className="text-black">{item}</span>
                                     </li>
                                 ))}
