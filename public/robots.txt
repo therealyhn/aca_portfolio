@@ -1,0 +1,5 @@
+﻿User-agent: *
+Allow: /
+Host: ajcreative-cva.com
+
+Sitemap: https://ajcreative-cva.com/sitemap.xml
