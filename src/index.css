@@ -1,6 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "animate.css";
 
 body {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,

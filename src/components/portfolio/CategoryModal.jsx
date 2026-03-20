@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import "animate.css";
 
 export default function CategoryModal({
     category,

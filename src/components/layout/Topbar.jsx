@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import useActiveSection from "../../hooks/useActiveSection";
 import useSiteSettings from "../../hooks/useSiteSettings";
 import { urlFor } from "../../lib/sanityClient";
-import "animate.css";
 
 const navLinks = [
     { label: "Početna", href: "home" },

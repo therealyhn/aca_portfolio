@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import { sanityClient } from "../../lib/sanityClient";
-import "animate.css";
 
 export default function Contact() {
     const sectionRef = useRef(null);

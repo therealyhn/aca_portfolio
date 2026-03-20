@@ -4,7 +4,6 @@ import NewsModal from "../../components/news/NewsModal";
 import NewsSwiper from "../../components/news/NewsSwiper";
 import { sanityClient, urlFor } from "../../lib/sanityClient";
 import { formatDate } from "../../utils/formatDate";
-import "animate.css";
 
 const FALLBACK_IMAGE = "https://placehold.co/900x600?text=News";
 

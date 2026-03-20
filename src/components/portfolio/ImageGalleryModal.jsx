@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import "animate.css";
 
 export default function ImageGalleryModal({ items, activeIndex, onClose, onPrev, onNext }) {
   const shouldShow = items && items.length > 0 && activeIndex != null;

@@ -18,10 +18,16 @@
 
   <link rel="icon" type="image/jpg" href="/img/favicon.jpg" />
   <link rel="canonical" href="https://ajcreative-cva.com/" />
+  <!-- Preload fallback hero image — LCP element, prikazuje se odmah dok Sanity ne odgovori -->
+  <link rel="preload" as="image" href="/img/slider/2.jpg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.sanity.io" crossorigin />
   <link rel="dns-prefetch" href="//cdn.sanity.io" />
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+  <meta name="google-site-verification" content="TPMn_cnsK2JqAIZjl3DBkzVYKl8bjWedAbVQEonvppk" />
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="sr_RS" />
@@ -70,8 +76,13 @@
             "@type": "Person",
             "@id": "https://ajcreative-cva.com/#person",
             "name": "Aleksandar Jovanovic",
-            "jobTitle": "Fotograf i graficki dizajner",
+            "jobTitle": "Fotograf i grafički dizajner",
             "url": "https://ajcreative-cva.com/",
+            "image": "https://ajcreative-cva.com/og-image.jpg",
+            "sameAs": [
+              "https://www.instagram.com/ajcreativephoto",
+              "https://www.linkedin.com/in/aleksandar-jovanovic-994902160/"
+            ],
             "mainEntityOfPage": {
               "@id": "https://ajcreative-cva.com/#webpage"
             }
@@ -80,9 +91,14 @@
       }
     </script>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
+  <!-- Non-blocking font load: preload + onload trick prevents render-blocking -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" />
+  </noscript>
 </head>
 
 <body>

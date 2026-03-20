@@ -5,7 +5,6 @@ import CategoryModal from "../portfolio/CategoryModal";
 import ImageGalleryModal from "../portfolio/ImageGalleryModal";
 import MobileCategorySwiper from "../portfolio/MobileCategorySwiper";
 import { sanityClient, urlFor } from "../../lib/sanityClient";
-import "animate.css";
 
 const FALLBACK_IMAGE = "https://placehold.co/800x600?text=No+Image";
 

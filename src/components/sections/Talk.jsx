@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import "animate.css";
 
 export default function Talk() {
     const sectionRef = useRef(null);

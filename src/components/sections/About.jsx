@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import "animate.css";
-import { sanityClient, urlFor } from "../../lib/sanityClient"
+import { sanityClient, urlFor } from "../../lib/sanityClient";
 
 export default function About() {
     const sectionRef = useRef(null);
@@ -52,8 +51,10 @@ export default function About() {
 
     const bullets = aboutData?.bullets || [];
 
-    // URL za sliku
-    const imageUrl = aboutData?.image ? urlFor(aboutData.image).width(900).url() : null;
+    // URL za sliku — WebP, 900px širina, quality 85 za bolju kompresiju
+    const imageUrl = aboutData?.image
+        ? urlFor(aboutData.image).width(900).format("webp").quality(85).url()
+        : null;
 
     return (
         <section id="about" ref={sectionRef} className="py-20">
@@ -66,9 +67,12 @@ export default function About() {
                         ) : imageUrl ? (
                             <img
                                 src={imageUrl}
-                                alt={aboutData?.heading || "About"}
+                                alt={aboutData?.heading || "Aleksandar Jovanovic — fotograf i dizajner"}
+                                width={900}
+                                height={1200}
                                 className="h-full w-full object-cover"
                                 loading="lazy"
+                                decoding="async"
                             />
                         ) : (
                             <div className="w-full h-full bg-gray-200 flex items-center justify-center text-sm text-gray-500">
