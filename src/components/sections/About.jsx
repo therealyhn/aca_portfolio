@@ -84,7 +84,7 @@ export default function About() {
 
                 {/* Tekst */}
                 <div
-                    className={`px-0 py-1 md:p-10 md:text-start text-center ${visible ? "animate__animated animate__fadeIn animate__slow" : "opacity-0"
+                    className={`px-0 py-1 md:p-10 md:text-start text-left ${visible ? "animate__animated animate__fadeIn animate__slow" : "opacity-0"
                         }`}
                 >
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-heading">
