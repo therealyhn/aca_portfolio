@@ -119,8 +119,8 @@ export default function Footer() {
 
                 {/* Potpis */}
                 <p className="text-center text-xs text-gray-500">
-                    Dizajnirano &amp; razvijeno od strane{" "}
-                    <a href="https://jovanljusic.com/" target="_blank" rel="noreferrer" className="text-primary font-semibold hover:underline">Jovan Ljušić</a>
+                    Dizajnirano &amp; Hostovano od strane{" "}
+                    <a href="https://maestro-solutions.org" target="_blank" rel="noreferrer" className="text-primary font-semibold hover:underline">Maestro Solutions</a>
                 </p>
             </div>
         </footer>
