@@ -1,5 +1,9 @@
+import { useCallback, useState } from "react";
 import useSiteSettings from "../../hooks/useSiteSettings";
 import { urlFor } from "../../lib/sanityClient";
+import { legalContent, legalLabels } from "../../data/legalContent";
+import LegalModal from "../legal/LegalModal";
+import FooterLegalLinks from "./footer/FooterLegalLinks";
 
 const fallbackSocials = [
     { label: "Instagram", url: "#", iconUrl: "/img/svg/social/instagram.svg" },
@@ -15,6 +19,8 @@ const fallbackSocialIcons = {
 
 export default function Footer() {
     const { settings } = useSiteSettings();
+    const [activeLegalDocument, setActiveLegalDocument] = useState(null);
+    const closeLegalDocument = useCallback(() => setActiveLegalDocument(null), []);
 
     const footerLogo = settings?.footerLogo
         ? urlFor(settings.footerLogo).height(80).url()
@@ -111,6 +117,7 @@ export default function Footer() {
                         <p className="text-xs text-gray-500 tracking-wide">
                             Sva prava zadržana.
                         </p>
+                        <FooterLegalLinks copy={legalLabels} onOpen={setActiveLegalDocument} />
                     </div>
                 </div>
 
@@ -123,6 +130,14 @@ export default function Footer() {
                     <a href="https://maestro-solutions.org" target="_blank" rel="noreferrer" className="text-primary font-semibold hover:underline">Maestro Solutions</a>
                 </p>
             </div>
+
+            {activeLegalDocument && (
+                <LegalModal
+                    content={legalContent[activeLegalDocument]}
+                    closeLabel={legalLabels.close}
+                    onClose={closeLegalDocument}
+                />
+            )}
         </footer>
     );
 }
